@@ -3,6 +3,7 @@ import Nav from "react-bootstrap/Nav";
 import NavDropdown from "react-bootstrap/NavDropdown";
 import Navbar from "react-bootstrap/Navbar";
 import Button from "react-bootstrap/Button";
+import InputGroup from "react-bootstrap/InputGroup";
 import Form from "react-bootstrap/Form";
 import PhoneIcon from "@mui/icons-material/Phone";
 import CalendarTodayIcon from "@mui/icons-material/CalendarToday";
@@ -19,11 +20,21 @@ import LoginIcon from "@mui/icons-material/Login";
 import LogoutIcon from "@mui/icons-material/Logout";
 import DiamondIcon from "@mui/icons-material/Diamond";
 
-function Header() {
+function NewHeader() {
   const navigate = useNavigate();
   const token = localStorage.getItem("token");
   const role = localStorage.getItem("role");
   const _id = localStorage.getItem("_id");
+  const [isFocused, setIsFocused] = useState(false);
+
+  const handleFocus = () => {
+    setIsFocused(true);
+  };
+
+  const handleBlur = () => {
+    setIsFocused(false);
+  };
+
   const handleLogout = () => {
     localStorage.removeItem("_id");
     localStorage.removeItem("token");
@@ -72,7 +83,7 @@ function Header() {
               >
                 <div className={styles.item}>
                   <DiamondIcon className={styles.icon} />
-                  Về chúng tôi
+                  VỀ CHÚNG TÔI
                 </div>
               </Link>
               <Link to="/" className={styles.items + " nav-link text-center"}>
@@ -87,7 +98,7 @@ function Header() {
               >
                 <div className={styles.item}>
                   <CalendarTodayIcon className={styles.icon} />
-                  Đặt lịch hẹn
+                  ĐẶT LỊCH HẸN
                 </div>
               </Link>
               <Link
@@ -96,7 +107,7 @@ function Header() {
               >
                 <div className={styles.item}>
                   <HistoryIcon className={styles.icon} />
-                  Lịch sử đơn hàng
+                  LỊCH SỬ ĐƠN HÀNG
                 </div>
               </Link>
             </Nav>
@@ -107,15 +118,15 @@ function Header() {
               >
                 <div className={styles.item}>
                   <div className="position-relative">
-                    <ShoppingCartIcon className={styles.icon + "mr-0"} />
+                    <ShoppingCartIcon className={styles.icon} />
                     <span
                       className="position-absolute top-0 start-60 translate-middle badge rounded-pill bg-danger m-0"
-                      style={{ fontSize: 10 }}
+                      style={{ fontSize: "8px" }}
                     >
                       {productAmount}
                     </span>
                   </div>
-                  Giỏ hàng
+                  &nbsp;&nbsp;GIỎ HÀNG
                 </div>
               </Link>
 
@@ -125,7 +136,7 @@ function Header() {
               >
                 <div className={styles.item}>
                   <PersonIcon className={styles.icon} />
-                  Tài khoản
+                  TÀI KHOẢN
                 </div>
               </Link>
 
@@ -135,16 +146,16 @@ function Header() {
                   className={styles.items + " nav-link text-center"}
                   onClick={handleLogout}
                 >
-                  <div className={styles.loginStyle}>
+                  <div className={styles.loginStyle + styles.loginStyle}>
                     <LogoutIcon className={styles.icon} />
-                    Đăng xuất
+                    ĐĂNG XUẤT
                   </div>
                 </Link>
               ) : (
                 <Link to="/login" className={styles.items + " nav-link"}>
-                  <div className={styles.loginStyle}>
+                  <div className={styles.loginStyle + styles.loginStyle}>
                     <LoginIcon className={styles.icon} />
-                    Đăng nhập
+                    ĐĂNG NHẬP
                   </div>
                 </Link>
               )}
@@ -192,58 +203,85 @@ function Header() {
             <Col
               xs={12}
               md={12}
-              lg={7}
+              lg={8}
               className="d-flex flex-wrap text-center ps-0 ms-3"
             >
-              <Link
-                to="/"
-                className="navbar-brand"
-                style={{ paddingLeft: "0.5rem", fontWeight: "bold", fontSize: "1.5rem", marginRight: "40px"}}
-              >
-                Trang Chủ
-              </Link>
-
               <Nav className="me-auto d-flex flex-wrap justify-content-between">
+                <Link
+                  to="/"
+                  className={styles.items + " nav-link"}
+                  style={{
+                    paddingLeft: "0.5rem",
+                    fontWeight: "600",
+                    fontSize: "1.3rem",
+                    marginRight: "30px",
+                    color: "#231f20",
+                  }}
+                >
+                  TRANG CHỦ
+                </Link>
                 <Link
                   to="/products/nhan"
                   className={styles.items + " nav-link"}
-                  style={{ fontSize: "1.3rem" }}
+                  style={{
+                    fontSize: "1.3rem",
+                    fontWeight: "600",
+                    color: "#231f20",
+                  }}
                 >
-                  Nhẫn
+                  NHẪN
                 </Link>
 
                 <Link
                   to="/products/bong-tai"
                   className={styles.items + " nav-link"}
-                  style={{ fontSize: "1.3rem" }}
+                  style={{
+                    fontSize: "1.3rem",
+                    fontWeight: "600",
+                    color: "#231f20",
+                  }}
                 >
-                  Bông tai
+                  BÔNG TAI
                 </Link>
                 <Link
                   to="/products/day-chuyen"
                   className={styles.items + " nav-link"}
-                  style={{ fontSize: "1.3rem" }}
+                  style={{
+                    fontSize: "1.3rem",
+                    fontWeight: "600",
+                    color: "#231f20",
+                  }}
                 >
-                  Dây chuyền
+                  DÂY CHUYỀN
                 </Link>
-                <Link to="/blog" className={styles.items + " nav-link"} style={{ fontSize: "1.3rem" }}>
-                  Blog
+                <Link
+                  to="/blog"
+                  className={styles.items + " nav-link"}
+                  style={{
+                    fontSize: "1.3rem",
+                    fontWeight: "600",
+                    color: "#231f20",
+                  }}
+                >
+                  BLOG
                 </Link>
               </Nav>
             </Col>
-            <Col xs={12} md={12} lg={4}>
+            <Col xs={12} md={12} lg={3}>
               <Form className={"d-flex text-center" + styles.form}>
                 <Form.Control
                   type="search"
-                  placeholder="Tìm kiếm"
-                  className={"me-2 " + styles.formcontrol}
+                  placeholder="Tìm kiếm sản phẩm"
+                  onFocus={handleFocus}
+                  onBlur={handleBlur}
+                  className={`${isFocused ? styles.redFormcontrol : ''} me-2`}
                   aria-label="Search"
                   value={userQuery}
                   onChange={handleChangeUserQuery}
                 />
 
                 <Button
-                  variant="primary"
+                  variant="danger"
                   className={styles.button}
                   onClick={() => {
                     navigate(`/search?query=${userQuery}`);
@@ -260,4 +298,4 @@ function Header() {
   );
 }
 
-export default Header;
+export default NewHeader;

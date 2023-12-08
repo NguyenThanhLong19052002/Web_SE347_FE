@@ -1,4 +1,5 @@
-import Header from "../../Components/Header_new_template";
+import Header from "../../Components/Header";
+import NewHeader from "../../Components/Header_new_template";
 import Footer from "../../Components/Footer";
 import { useEffect, useState } from "react";
 // import NorthIcon from "@mui/icons-material/North";
@@ -26,7 +27,8 @@ function DefaultLayout({ children }) {
     };
     return (
         <div>
-            <Header />
+            {/* <Header /> */}
+            <NewHeader />
             <div>{children}</div>
             <Footer />
             {/* {backToTopButton && (
