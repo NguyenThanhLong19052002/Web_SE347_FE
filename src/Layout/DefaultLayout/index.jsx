@@ -1,4 +1,4 @@
-import Header from "../../Components/Header";
+import Header from "../../Components/Header_new_template";
 import Footer from "../../Components/Footer";
 import { useEffect, useState } from "react";
 // import NorthIcon from "@mui/icons-material/North";
