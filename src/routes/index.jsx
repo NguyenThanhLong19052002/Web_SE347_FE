@@ -62,6 +62,9 @@ import ViewOrder from "../admin/pages/orderVerification/ViewOrder";
 import ConfirmationServiceNotification from "../admin/pages/service/viewService/verifiedService";
 import PaymentAdmin from "../admin/pages/Payment/Screens/paymentPage";
 import LoginAdmin from "../admin/loginAdmin/LoginAdmin";
+
+// Import Pages1: Giao diện mới
+
 const publicRoutes = [
   { path: "/", component: <Home /> },
   { path: "*", component: <NotFound />, layout: null },
@@ -162,6 +165,8 @@ const publicRoutes = [
       </AuthorizedUser>
     ),
   },
+
+  //Gọi component giao diện mới:
 ];
 export { publicRoutes };
 
@@ -436,3 +441,9 @@ const adminRoutes = [
   },
 ];
 export { adminRoutes };
+
+//Code chỗ nào
+const publicRoutes1 = [
+  //Gọi componant giao diện mới:
+];
+export { publicRoutes1 };
