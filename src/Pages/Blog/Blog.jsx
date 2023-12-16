@@ -21,8 +21,8 @@ function Blog() {
           <Col>
             <div>
               <p>
-                Top những món trang sức phù hợp nhất cho những bữa tiệc cưới
-                cuối, gồm: Dây chuyền, nhẫn, bông tai, vòng, lắc tay,...
+                Top aa những món trang sức phù hợp nhất cho những bữa tiệc cưới
+                cuối, gồm: Dây chuyềna, nhẫn, bông tai, vòng, lắc tay,...
               </p>
               <p>
                 Một mùa cưới nữa đã đến, hội chị em lại bắt đầu chuẩn bị trang
@@ -41,10 +41,7 @@ function Blog() {
           <h4 className="pb-3">Gợi ý quà tặng</h4>
           <Col lg="5">
             <div>
-              <img
-                src={blog3}
-                style={{ width: "100%" }}
-              ></img>
+              <img src={blog3} style={{ width: "100%" }}></img>
             </div>
           </Col>
           <Col>

@@ -442,7 +442,7 @@ const adminRoutes = [
 ];
 export { adminRoutes };
 
-//Code chỗ nào
+//Code chỗ này:
 const publicRoutes1 = [
   //Gọi componant giao diện mới:
 ];
