@@ -19,9 +19,7 @@ const ViewUser = () => {
   useEffect(function () {
     try {
       async function getData() {
-        const response = await axios.get(
-          `https://dialuxury.onrender.com/userid/${_id}`
-        );
+        const response = await axios.get(`https://dialuxury.onrender.com/userid/${_id}`);
         console.log(response.data); // Thêm sản phẩm vào danh sách
         setName(response.data.name);
         setEmail(response.data.email);
@@ -56,13 +54,17 @@ const ViewUser = () => {
             <th scope="col"> Ngày đặt hàng </th>
             <th scope="col"> Tổng tiền </th>
             <th scope="col"> Tình trạng giao hàng </th>
-            <th scope="col" className="text-end">Thao tác</th>
+            <th scope="col" className="text-end">
+              Thao tác
+            </th>
           </tr>
         </thead>
         <tbody>
           {orders?.map((order) => (
             <tr key={order._id}>
-              <td><b>{order.mahd}</b></td>
+              <td>
+                <b>{order.mahd}</b>
+              </td>
               <td>{order.ngaylap}</td>
               <td>{order.tongtien.toLocaleString()} VND </td>
               <td>
