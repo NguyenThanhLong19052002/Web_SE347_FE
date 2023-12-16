@@ -1,0 +1,67 @@
+.myContainer {
+  box-shadow: 0px 13px 24px 0px rgba(238, 208, 241, 0.08);
+  /* font-weight: bold; */
+  color: #232222;
+  font-size: 13px;
+}
+
+/* nav 1 */
+.firstNav {
+  overflow: hidden;
+  top: 0;
+}
+
+.loginStyle {
+  font-style: italic;
+  color: #000;
+}
+
+/* nav 2 */
+.secondNav {
+  top: 0;
+}
+
+/* nav 3 */
+.thirdNav {
+  top: 0;
+}
+
+
+.item {
+  display: flex;
+  align-items: center;
+  position: relative;
+  flex-direction: row;
+}
+.item:hover {
+  color: #bd0628;
+  transition: 0.4s linear 0s;
+}
+
+.icon {
+  display: flex;
+  font-size: 20px !important;
+  margin-right: 5px;
+  color: #bd0628 !important;
+}
+
+.items {
+  margin-right: 30px;
+}
+.items:hover {
+  color: #bd0628 !important;
+  transition: 0.4s ease-in-out 0s;
+}
+
+.formcontrol {
+  /* width: 300px !important; */
+  outline: none;
+}
+
+.redFormcontrol:focus {
+  border-color: #bd0628; /* Đổi màu viền của ô khi focus */
+  box-shadow: 0 0 5px #bd0628; /* Đổi màu shadow khi focus */
+  /* Thêm các thuộc tính CSS khác cho ô tìm kiếm khi focus */
+}
+
+/* https://www.youtube.com/watch?v=0SktamdLLAQ */
