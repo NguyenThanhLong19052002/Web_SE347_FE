@@ -128,7 +128,7 @@ function PaymentInfo () {
                     </div>
                 </div>
                 <div className="text-center my-4">
-                    {ok && <Button onClick={UpdateOrder} className="btn btn-primary w-100">Xác nhận</Button>
+                    {ok && <Button onClick={UpdateOrder} className="btn btn-primary">Xác nhận</Button>
                     }
                 </div>
             </div>
