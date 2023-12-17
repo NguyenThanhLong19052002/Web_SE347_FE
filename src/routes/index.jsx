@@ -3,6 +3,7 @@ import Home1 from '../Pages/Home1';
 import NotFound from '../Pages/NotFound';
 
 import Cart from '../Pages/Cart';
+import Cart1 from '../Pages/Cart1';
 import PaymentInfo from '../Pages/Payment/PaymentInfo';
 import PaymentFinish from '../Pages/Payment/PaymentFinish';
 import Blog from '../Pages/Blog/Blog';
@@ -440,5 +441,13 @@ export { adminRoutes };
 //Code chỗ nào
 const publicRoutes1 = [
   //Gọi componant giao diện mới:
+  {
+    path: '/cart1',
+    component: (
+      <AuthorizedUser>
+        <Cart1 />
+      </AuthorizedUser>
+    ),
+  },
 ];
 export { publicRoutes1 };
