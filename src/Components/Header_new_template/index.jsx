@@ -113,7 +113,7 @@ function NewHeader() {
             </Nav>
             <Nav className={styles.navTop + " ms-auto"}>
               <Link
-                to="/cart"
+                to="/cart1"
                 className={styles.items + " nav-link text-center"}
               >
                 <div className={styles.item}>
@@ -221,7 +221,7 @@ function NewHeader() {
                   TRANG CHỦ
                 </Link>
                 <Link
-                  to="/products/nhan"
+                  to="/products/nhan-1"
                   className={styles.items + " nav-link"}
                   style={{
                     fontSize: "1.3rem",
@@ -233,7 +233,7 @@ function NewHeader() {
                 </Link>
 
                 <Link
-                  to="/products/bong-tai"
+                  to="/products/bong-tai-1"
                   className={styles.items + " nav-link"}
                   style={{
                     fontSize: "1.3rem",
@@ -244,7 +244,7 @@ function NewHeader() {
                   BÔNG TAI
                 </Link>
                 <Link
-                  to="/products/day-chuyen"
+                  to="/products/day-chuyen-1"
                   className={styles.items + " nav-link"}
                   style={{
                     fontSize: "1.3rem",
@@ -274,7 +274,7 @@ function NewHeader() {
                   placeholder="Tìm kiếm sản phẩm"
                   onFocus={handleFocus}
                   onBlur={handleBlur}
-                  className={`${isFocused ? styles.redFormcontrol : ''} me-2`}
+                  className={`${isFocused ? styles.redFormcontrol : ""} me-2`}
                   aria-label="Search"
                   value={userQuery}
                   onChange={handleChangeUserQuery}
