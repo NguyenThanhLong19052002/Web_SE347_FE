@@ -29,7 +29,7 @@
 }
 
 .title-h2 h2::before {
-  content: '';
+  content: "";
   width: 100%;
   background: #8c69f5;
   height: 2px;
@@ -55,7 +55,7 @@
 }
 
 .see-all:before {
-  content: '\f105';
+  content: "\f105";
   display: inline-block;
   font: normal normal normal 14px/1 FontAwesome;
   text-rendering: auto;
@@ -95,10 +95,11 @@
 }
 
 .product-name {
-  font-size: 14px;
+  font-size: 16px;
   margin-bottom: 4px;
   text-align: center;
   padding: 40px 20px 0 20px;
+  font-weight: 300;
 }
 
 .product-price {
@@ -109,6 +110,8 @@
   color: #8c69f5;
   text-align: center;
   display: inline-block;
+  font-weight: 300;
+  font-size: 16px;
 }
 
 .container-list-product {
@@ -140,7 +143,7 @@
 }
 
 .prev-button::before {
-  content: '\f104';
+  content: "\f104";
   font-size: 20px;
   line-height: 45px;
   text-align: center;
@@ -170,7 +173,7 @@
 }
 
 .next-button::before {
-  content: '\f105';
+  content: "\f105";
   font-size: 20px;
   line-height: 45px;
   text-align: center;

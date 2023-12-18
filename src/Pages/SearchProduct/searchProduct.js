@@ -1,4 +1,4 @@
-import { Container, Row, Image } from "react-bootstrap";
+import { Container, Row, Image, Carousel } from "react-bootstrap";
 import ProductList from "../Products/Components/Products";
 import ImageBanner from "../../../src/assets/images/banner-main-homepage-img.jpg";
 import { useState, useEffect, useContext } from "react";
@@ -27,12 +27,26 @@ function ProductsPage() {
         console.log(error);
       });
   }, [query]);
-
+  const images = [
+    "https://trangsuc.doji.vn/Upload/banner/2023/12/banner/1920x703.jpg",
+    "https://file.hstatic.net/200000627539/collection/daychuyen-01_b61b4057724a41c9a4a8920991b864dc.png",
+    "https://trangsuc.doji.vn/Upload/banner/2023/weddingland/tscc-home.png",
+  ];
   return (
     <>
       <Container fluid className="mb-5">
         <Row>
-          <Image src={ImageBanner} className="px-0"></Image>
+          <Carousel>
+            {images.map((image, index) => (
+              <Carousel.Item key={index}>
+                <Image
+                  className="d-block w-100"
+                  src={image}
+                  alt={`Slide ${index + 1}`}
+                />
+              </Carousel.Item>
+            ))}
+          </Carousel>
         </Row>
         <Row>
           <ProductList products={products} />;

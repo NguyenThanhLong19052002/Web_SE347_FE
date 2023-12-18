@@ -1,108 +1,116 @@
-import Home from '../Pages/Home';
-import Home1 from '../Pages/Home1';
-import NotFound from '../Pages/NotFound';
+import Home from "../Pages/Home";
+import Home1 from "../Pages/Home1";
+import NotFound from "../Pages/NotFound";
 
-import Cart from '../Pages/Cart';
-import Cart1 from '../Pages/Cart1';
-import PaymentInfo from '../Pages/Payment/PaymentInfo';
-import PaymentFinish from '../Pages/Payment/PaymentFinish';
-import Blog from '../Pages/Blog/Blog';
-import ProductsPage from '../Pages/Products/Screens/ProductsPage';
-import ProductsPage1 from '../Pages/Products/Screens/ProductsPage1';
-import ProductsPage2 from '../Pages/Products/Screens/ProductsPage2';
-import ProductsDetail from '../Pages/Products/Components/ProductDetail';
-import SearchProducts from '../Pages/SearchProduct/searchProduct';
-import AboutUs from '../Pages/AboutUs/AboutUs';
-import Book from '../Pages/Book/Book';
-import HomeAdmin from '../admin/pages/home/home_admin';
+import Cart from "../Pages/Cart";
+import Cart1 from "../Pages/Cart1";
+import PaymentInfo from "../Pages/Payment/PaymentInfo";
+import PaymentFinish from "../Pages/Payment/PaymentFinish";
+import Blog from "../Pages/Blog/Blog";
+import ProductsPage from "../Pages/Products/Screens/ProductsPage";
+import ProductsPage1 from "../Pages/Products/Screens/ProductsPage1";
+import ProductsPage2 from "../Pages/Products/Screens/ProductsPage2";
+import ProductsDetail from "../Pages/Products/Components/ProductDetail";
+import SearchProducts from "../Pages/SearchProduct/searchProduct";
+import AboutUs from "../Pages/AboutUs/AboutUs";
+import Book from "../Pages/Book/Book";
+import HomeAdmin from "../admin/pages/home/home_admin";
 
-import Login from '../Pages/Login1/components/login.js';
-import Account from '../Pages/Login1/components/profile.js';
-import Register from '../Pages/Login1/components/register.js';
-import Forgot from '../Pages/Login1/components/forgot';
-import Reset from '../Pages/Login1/components/otpForgot';
-import Orders from '../Pages/Orders/Orders.js';
-import Recovery from '../Pages/Login1/components/recovery';
-import { AuthorizedAdmin, AuthorizedUser, LoggedAdmin, LoggedUser } from '../Pages/Login1/authenticate';
-import OrderDetailProducts from '../Pages/Orders/OrderDetailProduct';
+import Login from "../Pages/Login1/components/login.js";
+import Account from "../Pages/Login1/components/profile.js";
+import Register from "../Pages/Login1/components/register.js";
+import Forgot from "../Pages/Login1/components/forgot";
+import Reset from "../Pages/Login1/components/otpForgot";
+import Orders from "../Pages/Orders/Orders.js";
+import Recovery from "../Pages/Login1/components/recovery";
+import {
+  AuthorizedAdmin,
+  AuthorizedUser,
+  LoggedAdmin,
+  LoggedUser,
+} from "../Pages/Login1/authenticate";
+import OrderDetailProducts from "../Pages/Orders/OrderDetailProduct";
 
-import Service from '../admin/pages/service/service_admin';
+import Service from "../admin/pages/service/service_admin";
 
-import ViewService from '../admin/pages/service/viewService/viewService';
-import AdjustService from '../admin/pages/service/adjustService/adjustService';
-import AddTypeInService from '../admin/pages/service/viewService/add/add';
-import WareHouse from '../admin/pages/Warehouse/warehouse_admin';
+import ViewService from "../admin/pages/service/viewService/viewService";
+import AdjustService from "../admin/pages/service/adjustService/adjustService";
+import AddTypeInService from "../admin/pages/service/viewService/add/add";
+import WareHouse from "../admin/pages/Warehouse/warehouse_admin";
 
-import ViewPayment from '../admin/pages/Payment/Screens/paymentDetails';
-import VerifyOrder from '../admin/pages/orderVerification/orderVerification';
-import ViewOrderVerification from '../admin/pages/orderVerification/viewOrderVerification/viewOrderVerification';
-import ConfirmationNotification from '../admin/pages/verfiedPage';
-import Hoadon from '../admin/pages/Hoadon';
-import ChitietHoadon from '../admin/Components/ChitietHoadon';
-import AdjustServiceType from '../admin/pages/service/adjustServiceType/adjustServiceType';
-import VouchersPageAdmin from '../admin/pages/VouchersPage/Screens/vouchersPage';
-import VouchersDetailsAdmin from '../admin/pages/VouchersPage/Screens/vouchersDetails';
-import ProductsPageAdmin from '../admin/pages/ProductsPage/Screens/productsPage';
-import ProductDetailsAdmin from '../admin/pages/ProductsPage/Screens/productDetails';
-import AddProduct from '../admin/pages/ProductsPage/Screens/addProduct';
-import EditProduct from '../admin/pages/ProductsPage/Screens/editProduct';
-import AddVoucher from '../admin/pages/VouchersPage/Screens/addVoucher';
-import EditVoucher from '../admin/pages/VouchersPage/Screens/editVoucher';
-import AddVoucherProduct from '../admin/pages/VouchersPage/Screens/addProduct';
-import EditVoucherProduct from '../admin/pages/VouchersPage/Screens/editProduct';
-import AddServiceType from '../admin/pages/service/addServiceType/addServiceType';
-import ChangePassword from '../Pages/Login1/components/changePassword';
-import Users from '../admin/pages/users/user';
-import ViewUser from '../admin/pages/users/viewUser';
-import OrderView from '../admin/pages/users/OderView';
-import ViewOrder from '../admin/pages/orderVerification/ViewOrder';
-import ConfirmationServiceNotification from '../admin/pages/service/viewService/verifiedService';
-import PaymentAdmin from '../admin/pages/Payment/Screens/paymentPage';
-import LoginAdmin from '../admin/loginAdmin/LoginAdmin';
+import ViewPayment from "../admin/pages/Payment/Screens/paymentDetails";
+import VerifyOrder from "../admin/pages/orderVerification/orderVerification";
+import ViewOrderVerification from "../admin/pages/orderVerification/viewOrderVerification/viewOrderVerification";
+import ConfirmationNotification from "../admin/pages/verfiedPage";
+import Hoadon from "../admin/pages/Hoadon";
+import ChitietHoadon from "../admin/Components/ChitietHoadon";
+import AdjustServiceType from "../admin/pages/service/adjustServiceType/adjustServiceType";
+import VouchersPageAdmin from "../admin/pages/VouchersPage/Screens/vouchersPage";
+import VouchersDetailsAdmin from "../admin/pages/VouchersPage/Screens/vouchersDetails";
+import ProductsPageAdmin from "../admin/pages/ProductsPage/Screens/productsPage";
+import ProductDetailsAdmin from "../admin/pages/ProductsPage/Screens/productDetails";
+import AddProduct from "../admin/pages/ProductsPage/Screens/addProduct";
+import EditProduct from "../admin/pages/ProductsPage/Screens/editProduct";
+import AddVoucher from "../admin/pages/VouchersPage/Screens/addVoucher";
+import EditVoucher from "../admin/pages/VouchersPage/Screens/editVoucher";
+import AddVoucherProduct from "../admin/pages/VouchersPage/Screens/addProduct";
+import EditVoucherProduct from "../admin/pages/VouchersPage/Screens/editProduct";
+import AddServiceType from "../admin/pages/service/addServiceType/addServiceType";
+import ChangePassword from "../Pages/Login1/components/changePassword";
+import Users from "../admin/pages/users/user";
+import ViewUser from "../admin/pages/users/viewUser";
+import OrderView from "../admin/pages/users/OderView";
+import ViewOrder from "../admin/pages/orderVerification/ViewOrder";
+import ConfirmationServiceNotification from "../admin/pages/service/viewService/verifiedService";
+import PaymentAdmin from "../admin/pages/Payment/Screens/paymentPage";
+import LoginAdmin from "../admin/loginAdmin/LoginAdmin";
 
 // Import Pages1: Giao diện mới
+import Products_Page from "../Pages/Products1/Screens/ProductsPage";
+import Products_Page1 from "../Pages/Products1/Screens/ProductsPage1";
+import Products_Page2 from "../Pages/Products1/Screens/ProductsPage2";
 
 const publicRoutes = [
-  { path: '/', component: <Home /> },
-  { path: '*', component: <NotFound />, layout: null },
+  { path: "/", component: <Home1 /> },
+  { path: "*", component: <NotFound />, layout: null },
   {
-    path: '/cart',
+    path: "/cart",
     component: (
       <AuthorizedUser>
         <Cart />
       </AuthorizedUser>
     ),
   },
-  { path: '/paymentinfo', component: <PaymentInfo /> },
-  { path: '/paymentfinish', component: <PaymentFinish /> },
+  { path: "/paymentinfo", component: <PaymentInfo /> },
+  { path: "/paymentfinish", component: <PaymentFinish /> },
 
   {
-    path: '/blog',
+    path: "/blog",
     component: <Blog />,
   },
-  { path: '/products/nhan', component: <ProductsPage /> },
+  { path: "/products/nhan", component: <ProductsPage /> },
   {
-    path: '/products/bong-tai',
+    path: "/products/bong-tai",
     component: <ProductsPage1 />,
   },
   {
-    path: '/products/day-chuyen',
+    path: "/products/day-chuyen",
     component: <ProductsPage2 />,
   },
   {
-    path: '/productsdetail/:id',
+    path: "/productsdetail/:id",
     component: <ProductsDetail />,
   },
   {
-    path: '/search',
+    path: "/search",
     component: <SearchProducts />,
   },
   {
-    path: '/aboutus',
+    path: "/aboutus",
     component: <AboutUs />,
   },
   {
-    path: '/book/:_id',
+    path: "/book/:_id",
     component: (
       <AuthorizedUser>
         <Book></Book>
@@ -110,7 +118,7 @@ const publicRoutes = [
     ),
   },
   {
-    path: '/login',
+    path: "/login",
     component: (
       <LoggedUser>
         <Login></Login>
@@ -118,11 +126,11 @@ const publicRoutes = [
     ),
   },
   {
-    path: '/register',
+    path: "/register",
     component: <Register></Register>,
   },
   {
-    path: '/account/:_id',
+    path: "/account/:_id",
     component: (
       <AuthorizedUser>
         <Account></Account>
@@ -130,20 +138,20 @@ const publicRoutes = [
     ),
   },
   {
-    path: '/forgot',
+    path: "/forgot",
     component: <Forgot></Forgot>,
   },
   {
-    path: '/recovery/:_id',
+    path: "/recovery/:_id",
     component: <Recovery></Recovery>,
   },
   {
-    path: '/reset/:_id',
+    path: "/reset/:_id",
     component: <Reset></Reset>,
   },
 
   {
-    path: '/orders/:_id',
+    path: "/orders/:_id",
     component: (
       <AuthorizedUser>
         <Orders></Orders>
@@ -151,25 +159,35 @@ const publicRoutes = [
     ),
   },
   {
-    path: '/orders/detail/:_orderid',
+    path: "/orders/detail/:_orderid",
     component: <OrderDetailProducts></OrderDetailProducts>,
   },
   {
-    path: '/account/changePassword/:_id',
+    path: "/account/changePassword/:_id",
     component: (
       <AuthorizedUser>
         <ChangePassword></ChangePassword>
       </AuthorizedUser>
     ),
   },
-  { path: '/home1', component: <Home1 /> },
+  { path: "/home1", component: <Home /> },
+  { path: "/cart1", component: <Cart1 /> },
+  { path: "/products/nhan-1", component: <Products_Page /> },
+  {
+    path: "/products/bong-tai-1",
+    component: <Products_Page1 />,
+  },
+  {
+    path: "/products/day-chuyen-1",
+    component: <Products_Page2 />,
+  },
 ];
 export { publicRoutes };
 
 const adminRoutes = [
-  { path: '*', component: <NotFound />, layout: null },
+  { path: "*", component: <NotFound />, layout: null },
   {
-    path: '/users',
+    path: "/users",
     component: (
       <AuthorizedAdmin>
         <Users></Users>
@@ -177,16 +195,16 @@ const adminRoutes = [
     ),
   },
   {
-    path: '/users/:_id',
+    path: "/users/:_id",
     component: (
       <AuthorizedAdmin>
-        {' '}
+        {" "}
         <ViewUser></ViewUser>
       </AuthorizedAdmin>
     ),
   },
   {
-    path: '/user/order/detail/:_orderid',
+    path: "/user/order/detail/:_orderid",
     component: (
       <AuthorizedAdmin>
         <OrderView></OrderView>
@@ -194,7 +212,7 @@ const adminRoutes = [
     ),
   },
   {
-    path: '/order/detail/:_orderid',
+    path: "/order/detail/:_orderid",
     component: (
       <AuthorizedAdmin>
         <ViewOrder></ViewOrder>
@@ -202,7 +220,7 @@ const adminRoutes = [
     ),
   },
   {
-    path: '/service',
+    path: "/service",
     component: (
       <AuthorizedAdmin>
         <Service />
@@ -210,7 +228,7 @@ const adminRoutes = [
     ),
   },
   {
-    path: '/service/addTypeInService',
+    path: "/service/addTypeInService",
     component: (
       <AuthorizedAdmin>
         <AddTypeInService />
@@ -219,7 +237,7 @@ const adminRoutes = [
   },
 
   {
-    path: '/service/view/:_id',
+    path: "/service/view/:_id",
     component: (
       <AuthorizedAdmin>
         <ViewService />
@@ -231,17 +249,17 @@ const adminRoutes = [
   //   component: <ViewService />,
   // },
   {
-    path: '/service/adjustService',
+    path: "/service/adjustService",
     component: (
       <AuthorizedAdmin>
-        {' '}
+        {" "}
         <AdjustService />
       </AuthorizedAdmin>
     ),
   },
 
   {
-    path: '/serviceType/addServiceType',
+    path: "/serviceType/addServiceType",
     component: (
       <AuthorizedAdmin>
         <AddServiceType />
@@ -249,7 +267,7 @@ const adminRoutes = [
     ),
   },
   {
-    path: '/serviceType/adjustServiceType/:svt_id',
+    path: "/serviceType/adjustServiceType/:svt_id",
     component: (
       <AuthorizedAdmin>
         <AdjustServiceType />
@@ -257,25 +275,25 @@ const adminRoutes = [
     ),
   },
   {
-    path: '/homeAdmin',
+    path: "/homeAdmin",
     component: (
       <AuthorizedAdmin>
-        {' '}
+        {" "}
         <HomeAdmin />
       </AuthorizedAdmin>
     ),
   },
   {
-    path: '/loginAdmin',
+    path: "/loginAdmin",
     component: (
       <LoggedAdmin>
-        {' '}
+        {" "}
         <LoginAdmin />
       </LoggedAdmin>
     ),
   },
   {
-    path: '/warehouse',
+    path: "/warehouse",
     component: (
       <AuthorizedAdmin>
         <WareHouse />
@@ -284,7 +302,7 @@ const adminRoutes = [
   },
 
   {
-    path: 'admin/paymentPage',
+    path: "admin/paymentPage",
     component: (
       <AuthorizedAdmin>
         <PaymentAdmin />
@@ -292,16 +310,16 @@ const adminRoutes = [
     ),
   },
   {
-    path: 'admin/paymentPage/:id',
+    path: "admin/paymentPage/:id",
     component: (
       <AuthorizedAdmin>
-        {' '}
+        {" "}
         <ViewPayment />
       </AuthorizedAdmin>
     ),
   },
   {
-    path: '/orderVerification',
+    path: "/orderVerification",
     component: (
       <AuthorizedAdmin>
         <VerifyOrder />
@@ -309,7 +327,7 @@ const adminRoutes = [
     ),
   },
   {
-    path: '/viewOrderVerification',
+    path: "/viewOrderVerification",
     component: (
       <AuthorizedAdmin>
         <ViewOrderVerification />
@@ -318,16 +336,16 @@ const adminRoutes = [
   },
 
   {
-    path: '/HoadonAdmin',
+    path: "/HoadonAdmin",
     component: (
       <AuthorizedAdmin>
-        {' '}
+        {" "}
         <Hoadon />
       </AuthorizedAdmin>
     ),
   },
   {
-    path: '/admin/vouchersPage',
+    path: "/admin/vouchersPage",
     component: (
       <AuthorizedAdmin>
         <VouchersPageAdmin />
@@ -335,34 +353,34 @@ const adminRoutes = [
     ),
   },
   {
-    path: '/admin/vouchersPage/:id',
+    path: "/admin/vouchersPage/:id",
     component: (
       <AuthorizedAdmin>
-        {' '}
+        {" "}
         <VouchersDetailsAdmin />
       </AuthorizedAdmin>
     ),
   },
   {
-    path: '/admin/vouchersPage/:id/add',
+    path: "/admin/vouchersPage/:id/add",
     component: (
       <AuthorizedAdmin>
-        {' '}
+        {" "}
         <AddVoucherProduct />
       </AuthorizedAdmin>
     ),
   },
   {
-    path: '/admin/vouchersPage/:id/edit/:productId',
+    path: "/admin/vouchersPage/:id/edit/:productId",
     component: (
       <AuthorizedAdmin>
-        {' '}
+        {" "}
         <EditVoucherProduct />
       </AuthorizedAdmin>
     ),
   },
   {
-    path: '/admin/productsPage',
+    path: "/admin/productsPage",
     component: (
       <AuthorizedAdmin>
         <ProductsPageAdmin />
@@ -370,7 +388,7 @@ const adminRoutes = [
     ),
   },
   {
-    path: '/admin/productsPage/:id',
+    path: "/admin/productsPage/:id",
     component: (
       <AuthorizedAdmin>
         <ProductDetailsAdmin />
@@ -378,7 +396,7 @@ const adminRoutes = [
     ),
   },
   {
-    path: '/admin/productsPage/add',
+    path: "/admin/productsPage/add",
     component: (
       <AuthorizedAdmin>
         <AddProduct />
@@ -386,7 +404,7 @@ const adminRoutes = [
     ),
   },
   {
-    path: '/admin/productsPage/edit/:id',
+    path: "/admin/productsPage/edit/:id",
     component: (
       <AuthorizedAdmin>
         <EditProduct />
@@ -394,7 +412,7 @@ const adminRoutes = [
     ),
   },
   {
-    path: '/admin/vouchersPage/add',
+    path: "/admin/vouchersPage/add",
     component: (
       <AuthorizedAdmin>
         <AddVoucher />
@@ -402,7 +420,7 @@ const adminRoutes = [
     ),
   },
   {
-    path: '/admin/vouchersPage/edit/:id',
+    path: "/admin/vouchersPage/edit/:id",
     component: (
       <AuthorizedAdmin>
         <EditVoucher />
@@ -411,7 +429,7 @@ const adminRoutes = [
   },
 
   {
-    path: '/ConfirmationNotification',
+    path: "/ConfirmationNotification",
     component: (
       <AuthorizedAdmin>
         <ConfirmationNotification />
@@ -419,7 +437,7 @@ const adminRoutes = [
     ),
   },
   {
-    path: '/veriedService',
+    path: "/veriedService",
     component: (
       <AuthorizedAdmin>
         <ConfirmationServiceNotification />
@@ -428,7 +446,7 @@ const adminRoutes = [
   },
 
   {
-    path: '/ChitietHoadonAdmin/:mahd',
+    path: "/ChitietHoadonAdmin/:mahd",
     component: (
       <AuthorizedAdmin>
         <ChitietHoadon />
@@ -442,7 +460,7 @@ export { adminRoutes };
 const publicRoutes1 = [
   //Gọi componant giao diện mới:
   {
-    path: '/cart1',
+    path: "/cart1",
     component: (
       <AuthorizedUser>
         <Cart1 />
