@@ -23,9 +23,9 @@ function Home1() {
   }, []);
 
   const images = [
+    "https://trangsuc.doji.vn/Upload/banner/2023/12/banner/1920x703.jpg",
     "https://trangsuc.doji.vn/Upload/banner/2023/10/bannerweb/2-banner-trang-chu-2.jpg",
     "https://trangsuc.doji.vn/Upload/banner/2023/weddingland/banner/1920x703.png",
-    "https://trangsuc.doji.vn/Upload/banner/2023/12/banner/1920x703.jpg",
   ];
 
   const loadBestSellingProduct = async () => {
