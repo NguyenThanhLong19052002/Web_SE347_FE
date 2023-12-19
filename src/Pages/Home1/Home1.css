@@ -96,10 +96,11 @@
 }
 
 .product-name {
-  font-size: 14px;
+  font-size: 16px;
   margin: 40px 0 4px 0;
   text-align: center;
   padding: 0 20px 0 20px;
+  font-weight: 300;
 }
 
 .product-price {
@@ -110,6 +111,8 @@
   color: #8c69f5;
   text-align: center;
   display: inline-block;
+  font-weight: 300;
+  font-size: 16px;
 }
 
 .product-quantity-sold {

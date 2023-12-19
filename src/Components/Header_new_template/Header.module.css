@@ -59,8 +59,8 @@
 }
 
 .redFormcontrol:focus {
-  border-color: #bd0628; /* Đổi màu viền của ô khi focus */
-  box-shadow: 0 0 5px #bd0628; /* Đổi màu shadow khi focus */
+  border-color: #bd0628 !important; /* Đổi màu viền của ô khi focus */
+  box-shadow: 0 0 5px #bd0628 !important; /* Đổi màu shadow khi focus */
   /* Thêm các thuộc tính CSS khác cho ô tìm kiếm khi focus */
 }
 

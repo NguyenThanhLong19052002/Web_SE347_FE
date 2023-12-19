@@ -14,9 +14,6 @@ import StarIcon from '@mui/icons-material/Star';
 import { yellow } from '@mui/material/colors';
 import Modal from 'react-bootstrap/Modal';
 import toast, { Toaster } from 'react-hot-toast';
-import CheckIcon from '@mui/icons-material/Check';
-
-
 function Product() {
   const scrollRef = useRef(null);
   const { id } = useParams(); //lấy id từ url
@@ -266,20 +263,14 @@ function Product() {
       <Toaster position="top-center" reverseOrder={false}></Toaster>
       <div ref={scrollRef} />
       <Row className="align-align-items-center justify-content-center">
-      {/* <Col md={6} className='text-end'>
-        <div className="rounded border">
-          <Image src={product?.image || ''} alt="Hình ảnh sản phẩm" fluid className="rounded" />
-        </div>
-      </Col> */}
-       <Col md={6} className='text-center'>
-    <div style={{ paddingTop: '20px' }}>
-      <Image src={product?.image || ''} alt="Hình ảnh sản phẩm" fluid className="rounded" style={{ border: '1px solid #ddd', borderRadius: '4px' }} />
-    </div>
-  </Col>
+        <Col md={4}>
+          <Image src={product?.image || ''} alt="Hình ảnh sản phẩm" fluid />
+        </Col>
         <Col md={6}>
-          <h2 style={{ paddingTop: '20px' }}>{product?.name || 'Product'}</h2>
-          <p>Mã sản phẩm: {product?.productid || 'Product'}</p>
+          <h2>{product?.name || 'Product'}</h2>
+          <p>Mã: {product?.productid || 'Product'}</p>
           <p>
+            Điểm đánh giá:
             <span>
               {diem !== undefined &&
                 [...Array(diem)].map((_, index) => (
@@ -288,46 +279,35 @@ function Product() {
                     sx={{ color: yellow[500], fontSize: 20 }}
                   />
                 ))}
-              {totalComment !== undefined && <span style={{ opacity: 0.7 }}>{totalComment} đánh giá</span>}
+              {totalComment !== undefined && <span>({totalComment})</span>}
             </span>
           </p>
-          
-          <h4  style={{ color: 'red' }}>{formatCurrency(product?.price || 1000000)}</h4>
           <Row>
-            {/* <Col md={2}>
-            <p>
-          
-          Đã bán: {product?.quantity_sold}
-        </p>
-            </Col> */}
+            <Col md={2}>
+              <p>Đã bán: {product?.quantity_sold}</p>
+            </Col>
             <Col>
-            <p>
-            <CheckIcon style={{ color: 'green', marginRight: '5px' }} />
-             CÒN {product?.quantity} SẢN PHẨM</p>
+              <p>Còn hàng: {product?.quantity} </p>
             </Col>
           </Row>
-         
-          <div >
-            <hr className="w-100 mb-2" />
-              <div className="d-flex align-align-items-center mb-3">
-                <span className="me-3">Số lượng:</span>
-                <Button
-                  variant="outline-secondary"
-                  size="sm"
-                  onClick={HandleDecreaseSL}
-                >
-                  -
-                </Button>
-                <span className="mx-3">{sl}</span>
-                <Button
-                  variant="outline-secondary"
-                  size="sm"
-                  onClick={HandleIncreaseSL}
-                >
-                  +
-                </Button>
-              </div>
-           
+          <h4>Giá: {formatCurrency(product?.price || 1000000)}</h4>
+          <div className="d-flex align-align-items-center mb-3">
+            <span className="me-3">Số lượng:</span>
+            <Button
+              variant="outline-secondary"
+              size="sm"
+              onClick={HandleDecreaseSL}
+            >
+              -
+            </Button>
+            <span className="mx-3">{sl}</span>
+            <Button
+              variant="outline-secondary"
+              size="sm"
+              onClick={HandleIncreaseSL}
+            >
+              +
+            </Button>
           </div>
           <Button
             variant="primary"
@@ -339,54 +319,36 @@ function Product() {
           </Button>
         </Col>
       </Row>
-      <div style={{ paddingTop: '40px', paddingBottom:'40px' }}>
-        <h3>Chi tiết sản phẩm</h3>
+      <div>
+        <h3>Thông số</h3>
         <Row>
-          <Col md={6}>
+          <Col md={4}>
             <ListGroup className="w-100">
               <ListGroupItem>
-                <Row>
-                  <Col md={6}><strong>Chất liệu: </strong></Col>
-                  <Col md={6}>{product?.quality || 'Chưa có thông số'}</Col>
-                </Row>
-                
+                <strong>Chất liệu: </strong>
+                {product?.quality || 'Chưa có thông số'}
               </ListGroupItem>
               <ListGroupItem>
-                <Row>
-                    <Col md={6}><strong>Khối lượng: </strong></Col>
-                    <Col md={6}>{product?.mass || 'Chưa có thông số'}</Col>
-                  </Row>
-                
-              </ListGroupItem>
-            </ListGroup>
-          </Col>
-          <Col md={6}>
-            <ListGroup className="w-100">
-              <ListGroupItem>
-                  <Row>
-                    <Col md={6}><strong>Kích thước: </strong></Col>
-                    <Col md={6}>{product?.size || 'Chưa có thông số'}</Col>
-                  </Row>
-                
-                
+                <strong>Khối lượng: </strong>
+                {product?.mass || 'Chưa có thông số'}
               </ListGroupItem>
               <ListGroupItem>
-                  <Row>
-                    <Col md={6}><strong>Màu sắc: </strong></Col>
-                    <Col md={6}> {product?.color || 'Chưa có thông số'}</Col>
-                  </Row>
-                
-               
+                <strong>Kích thước: </strong>
+                {product?.size || 'Chưa có thông số'}
               </ListGroupItem>
+              <ListGroupItem>
+                <strong>Màu sắc: </strong>
+                {product?.color || 'Chưa có thông số'}
+              </ListGroupItem>
+              {/* <ListGroupItem>
+            <strong>Giá:</strong> 1,200,000đ <Badge variant="danger">-10%</Badge>
+          </ListGroupItem> */}
             </ListGroup>
           </Col>
         </Row>
-
       </div>
       {/* <h3 className="mt-3">Bình luận</h3> */}
-
-      <h3>Đánh giá {totalComment !== undefined && <span style={{ opacity: 0.7 }}>({totalComment} đánh giá)</span>}</h3>
-      <Form >
+      <Form>
         {/* <Form.Group controlId="formBasicEmail">
         <Form.Label>Nhập tên của bạn:</Form.Label>
         <FormControl type="text" placeholder="Nhập tên của bạn" />
@@ -414,17 +376,17 @@ function Product() {
           />
         </Form.Group>
 
-        <Button 
+        <Button
           variant="primary"
           type="submit"
-          className="mt-3 mb-3 center"
+          className="mt-3 mb-3"
           onClick={SendComment}
         >
-          Gửi đánh giá
+          Gửi bình luận
         </Button>
       </Form>
+      <h2>Bình luận</h2>
       <div>
-        <hr />
         {commentList !== undefined &&
           commentList.map((item) => {
             return (
@@ -518,8 +480,6 @@ function Product() {
           </div>
         )}
       </div>
-      
-      
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
           <Modal.Title>Chỉnh sửa bình luận</Modal.Title>

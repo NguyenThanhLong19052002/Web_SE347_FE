@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 
 import ProductHomepage from "./Components/MostSoldProducts";
 import NewProductHomepage from "./Components/NewProduct";
-import { Container, Row, Button, Image } from "react-bootstrap";
+import { Container, Row, Button, Image, Carousel } from "react-bootstrap";
 import ImageBanner from "../../../src/assets/images/Products/banner_search.jpg";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
@@ -78,12 +78,26 @@ function Home() {
     setNewProductCount(4);
     setShowMoreNew(false);
   };
-
+  const images = [
+    "https://trangsuc.doji.vn/Upload/banner/2023/weddingland/banner/1920x703.png",
+    "https://trangsuc.doji.vn/Upload/banner/2023/10/bannerweb/2-banner-trang-chu-2.jpg",
+    "https://trangsuc.doji.vn/Upload/banner/2023/12/banner/1920x703.jpg",
+  ];
   return (
     <div>
       <Container fluid>
         <Row>
-          <Image src={ImageBanner} className="px-0"></Image>
+          <Carousel>
+            {images.map((image, index) => (
+              <Carousel.Item key={index}>
+                <Image
+                  className="d-block w-100"
+                  src={image}
+                  alt={`Slide ${index + 1}`}
+                />
+              </Carousel.Item>
+            ))}
+          </Carousel>
         </Row>
         <Row>
           <h4
@@ -125,7 +139,7 @@ function Home() {
           >
             Sản phẩm mới
           </h4>
-          <NewProductHomepage products={newProduct.slice(0, newProductCount)} />   
+          <NewProductHomepage products={newProduct.slice(0, newProductCount)} />
           {!showMoreNew && newProduct.length > 4 && (
             <div className="text-center mt-3">
               <Button onClick={handleShowMoreNew} variant="secondary">
