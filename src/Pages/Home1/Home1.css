@@ -75,18 +75,19 @@
 
 .product-item {
   flex: 1;
-  height: 350px;
+  height: auto;
+  /* height: 370px; */
   position: relative;
   border: 1px solid #e0e0e0;
   background: #fff;
   padding: 0;
-  cursor: pointer;
 }
 
 .product-image {
   display: block;
   margin: 0 auto;
   width: 80%;
+  cursor: pointer;
   transition: transform 0.3s ease;
 }
 
@@ -96,9 +97,9 @@
 
 .product-name {
   font-size: 14px;
-  margin-bottom: 4px;
+  margin: 40px 0 4px 0;
   text-align: center;
-  padding: 40px 20px 0 20px;
+  padding: 0 20px 0 20px;
 }
 
 .product-price {
@@ -109,6 +110,12 @@
   color: #8c69f5;
   text-align: center;
   display: inline-block;
+}
+
+.product-quantity-sold {
+  float: right;
+  margin: 0;
+  padding: 5px 8px 5px 0;
 }
 
 .container-list-product {
@@ -192,11 +199,39 @@
   text-align: center;
   position: absolute;
   left: 0;
-  bottom: 75px;
+  bottom: 90px;
   opacity: 0;
   transition: 0.3s ease;
+  cursor: pointer;
+}
+
+.icon-arrow-next {
+  margin-left: 8px;
 }
 
 .product-item:hover .detail-button {
   opacity: 1;
+}
+
+@media only screen and (max-width: 739px) {
+  .detail-button {
+    width: 100px;
+    margin-left: calc((100% - 100px) / 2);
+  }
+  .container-padding {
+    padding: 0 20px !important;
+  }
+  .icon-arrow-next {
+    margin-left: 3px;
+  }
+}
+
+@media only screen and (min-width: 740px) and (max-width: 1224px) {
+  .detail-button {
+    width: 120px;
+    margin-left: calc((100% - 120px) / 2);
+  }
+  .container-padding {
+    padding: 0 100px !important;
+  }
 }
