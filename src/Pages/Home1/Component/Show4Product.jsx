@@ -1,26 +1,51 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import { useNavigate } from 'react-router-dom';
 
 const Show4Product = ({ products }) => {
   const navigate = useNavigate();
+  const [screenWidth, setScreenWidth] = useState(window.innerWidth);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setScreenWidth(window.innerWidth);
+    };
+
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
+  const calculateItemsToShow = () => {
+    if (screenWidth >= 1024) {
+      return 4;
+    } else if (screenWidth >= 740) {
+      return 3;
+    } else {
+      return 2;
+    }
+  };
 
   const handleProductClick = (productId) => {
     navigate(`/productsdetail/${productId}`);
   };
 
   const showProducts = () => {
-    const firstFourProducts = products.slice(0, 4);
+    const itemsToShow = calculateItemsToShow();
+    const firstFourProducts = products.slice(0, itemsToShow);
 
     return firstFourProducts.map((product, index) => (
       <div key={index} className="product-item">
-        <img className="product-image" src={product.image} alt={product.name} />
+        <img onClick={() => handleProductClick(product._id)} className="product-image" src={product.image} alt={product.name} />
         <a onClick={() => handleProductClick(product._id)} className="detail-button">
           Chi tiết
-          <ArrowForwardIcon sx={{ marginLeft: '8px' }} fontSize="small" />
+          <ArrowForwardIcon className="icon-arrow-next" fontSize="small" />
         </a>
         <p className="product-name">{product.name}</p>
         <p className="product-price">{`${product.price}đ`}</p>
+        <p className="product-quantity-sold">{`đã bán ${product.quantity_sold}`}</p>
       </div>
     ));
   };
