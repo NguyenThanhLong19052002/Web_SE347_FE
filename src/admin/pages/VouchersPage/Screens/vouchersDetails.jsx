@@ -14,27 +14,50 @@ import Paper from "@mui/material/Paper";
 import styles from "./table.module.css";
 import { Image } from "react-bootstrap";
 
+import SearchIcon from "@mui/icons-material/Search";
+import Form from "react-bootstrap/Form";
+
 function VouchersDetails() {
   const [voucher, setVoucher] = useState([]);
   let { id, productId } = useParams();
+  const [products, setProducts] = useState([]);
+  const [userQuery, setUserQuery] = useState("");
 
-  // useEffect(() => {
-  //   axios
-  //     .get(`https://dialuxury.onrender.com/vouchers/${id}`)
-  //     .then((res) => {
-  //       setVoucher(res.data);
-  //     })
-  //     .catch((err) => console.log(err));
-  // }, [id]);
   useEffect(() => {
-    loadProducts();
-  }, []);
+    if (userQuery === "") {
+      loadProducts();
+      // setProducts(voucher.products);
+    } else {
+      searchProduct();
+    }
+  }, [userQuery]);
+
+  const handleChangeUserQuery = (e) => {
+    setUserQuery(e.target.value);
+  };
+
+  const searchProduct = () => {
+    axios
+      .get(`https://dialuxury.onrender.com/product/search?query=${userQuery}`)
+      .then((response) => {
+        // console.log(
+        //   `https://dialuxury.onrender.com/product/search?query=${userQuery}`
+        // );
+        setProducts(response.data);
+
+        console.log(response.data);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
 
   const loadProducts = async () => {
     axios
       .get(`https://dialuxury.onrender.com/vouchers/${id}`)
       .then((response) => {
         setVoucher(response.data);
+        setProducts(response.data.products);
       })
       .catch((error) => {
         console.log(error);
@@ -68,12 +91,34 @@ function VouchersDetails() {
         <div
           style={{
             display: "flex",
-            justifyContent: "flex-end",
+            justifyContent: "space-between",
+            alignItems: "center",
             marginRight: "20px",
             marginTop: "20px",
           }}
         >
           {" "}
+          <Form className={"d-flex text-center"}>
+            <Form.Control
+              type="search"
+              placeholder="Tìm kiếm sản phẩm..."
+              className={"me-2 " + styles.formcontrol}
+              aria-label="Search"
+              value={userQuery}
+              onChange={handleChangeUserQuery}
+            />
+
+            <Button
+              variant="primary"
+              disabled="True"
+              // className={styles.button}
+              // onClick={() => {
+              //   navigate(`/admin/productsPage?query=${userQuery}`);
+              // }}
+            >
+              <SearchIcon />
+            </Button>
+          </Form>
           <Button
             variant="primary"
             onClick={() => {
@@ -152,7 +197,7 @@ function VouchersDetails() {
               </TableRow>
             </TableHead>
             <TableBody>
-              {voucher.products?.map((product, index) => (
+              {products?.map((product, index) => (
                 <TableRow key={product.index}>
                   <TableCell className={styles.tableCell + " text-center"}>
                     {index + 1}

@@ -64,6 +64,7 @@ import ViewOrder from "../admin/pages/orderVerification/ViewOrder";
 import ConfirmationServiceNotification from "../admin/pages/service/viewService/verifiedService";
 import PaymentAdmin from "../admin/pages/Payment/Screens/paymentPage";
 import LoginAdmin from "../admin/loginAdmin/LoginAdmin";
+import CommentsPageAdmin from "../admin/pages/ProductsPage/Screens/commentsPage.jsx"
 
 // Import Pages1: Giao diện mới
 import Products_Page from "../Pages/Products1/Screens/ProductsPage";
@@ -384,6 +385,14 @@ const adminRoutes = [
     component: (
       <AuthorizedAdmin>
         <ProductsPageAdmin />
+      </AuthorizedAdmin>
+    ),
+  },
+  {
+    path: "/admin/commentsPage",
+    component: (
+      <AuthorizedAdmin>
+        <CommentsPageAdmin />
       </AuthorizedAdmin>
     ),
   },
