@@ -14,6 +14,7 @@ import WarehouseIcon from '@mui/icons-material/Warehouse';
 import AccountCircleOutlinedIcon from '@mui/icons-material/AccountCircleOutlined';
 import LocalShippingIcon from '@mui/icons-material/LocalShipping';
 import NoteAltIcon from '@mui/icons-material/NoteAlt';
+import CommentIcon from '@mui/icons-material/Comment';
 
 function AdminSidebar() {
   const navigate = useNavigate();
@@ -51,6 +52,12 @@ function AdminSidebar() {
             <Link to="/admin/productsPage" style={{ textDecoration: 'none' }}>
                 <DiamondIcon className={styles.icon} />
                 <span>Sản Phẩm</span>
+            </Link>
+          </li>
+          <li>
+            <Link to="/admin/commentsPage" style={{ textDecoration: 'none' }}>
+                <CommentIcon className={styles.icon} />
+                <span>Quản lý bình luận</span>
             </Link>
           </li>
           <li>

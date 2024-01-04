@@ -103,13 +103,31 @@ function NewIProduct({
               ></input>
             </div>
             <p className="price-itpicked">
-              Giá tiền: <span>{price}</span>
+              Giá tiền:{" "}
+              <span>
+                {price.toLocaleString("vi", {
+                  style: "currency",
+                  currency: "VND",
+                })}
+              </span>
             </p>
             <p className="price-itpicked">
-              Tạm tính: <span>{price}</span>
+              Tạm tính:{" "}
+              <span>
+                {price.toLocaleString("vi", {
+                  style: "currency",
+                  currency: "VND",
+                })}
+              </span>
             </p>
             <p className="price-itpicked">
-              Thành tiền: <span>{price * sl}</span>
+              Thành tiền:{" "}
+              <span>
+                {(price * sl).toLocaleString("vi", {
+                  style: "currency",
+                  currency: "VND",
+                })}
+              </span>
             </p>
           </div>
           <div className="click-itp">

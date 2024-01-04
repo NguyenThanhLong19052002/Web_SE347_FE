@@ -16,6 +16,11 @@
     border-radius: 5px;
     color: aqua;
   }
+
+  .formcontrol {
+    width: 300px !important;
+    outline: none;
+  }
   
   /* .table .productStatus.Approved {
       color: green;

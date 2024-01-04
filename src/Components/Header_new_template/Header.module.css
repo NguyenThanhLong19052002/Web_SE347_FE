@@ -42,7 +42,8 @@
   display: flex;
   font-size: 20px !important;
   margin-right: 5px;
-  color: #bd0628 !important;
+  /* color: #bd0628 !important; */
+  color: rgb(255, 229, 0) !important;
 }
 
 .items {

@@ -10,7 +10,7 @@
 .title-h2 h2::before {
   content: "";
   width: 100%;
-  background: #bd0628;
+  background: #bd0628 !important;
   height: 2px;
   position: absolute;
   bottom: -9px;
@@ -61,7 +61,7 @@
   background-color: #da2032;
 }
 .bakbuy:hover a {
-  color: #ffffff;
+  color: #ffffff !important;
 }
 .bakbuy:hover .icon-back {
   color: #ffffff;
@@ -206,4 +206,33 @@ p{
     font-size: 16px !important;
     font-weight: 600;
 }
+
+.it-cartr.frm-vou {
+  /* padding: 12px 0 8px; */
+  border-bottom: 1px solid #cdcdcd;
+}
+.it-cartr.frm-vou .form-group {
+  margin-bottom: 0;
+}
+.it-cartr.frm-vou input {
+  height: 34px;
+  width: calc(100% - 74px);
+  border: 1px solid #e2e2e2;
+  padding-left: 10px;
+  outline: none;
+}
+.it-cartr.frm-vou button {
+  width: 74px;
+  float: right;
+  font-size: 14px;
+  color: #fff;
+  border: none;
+  background: #393939;
+  height: 34px;
+  font-weight: 600;
+}
+.it-cartr.frm-vou button:hover:not([disabled]){
+  color: #da2032;
+}
+
 

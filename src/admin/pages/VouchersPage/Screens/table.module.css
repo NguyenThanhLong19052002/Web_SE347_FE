@@ -17,6 +17,11 @@
   color: aqua;
 }
 
+.formcontrol {
+  width: 300px !important;
+  outline: none;
+}
+
 /* .table .productStatus.Approved {
     color: green;
     background-color: rgba(0, 128, 0, 0.151);
