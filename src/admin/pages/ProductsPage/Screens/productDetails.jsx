@@ -88,8 +88,9 @@ function ProductDetails() {
                   {product.quantity_sold}
                 </TableCell>
                 <TableCell
-                  className={styles.tableCell + " text-center"}
-                ></TableCell>
+                  className={styles.tableCell + " text-center"}>
+                    {product.quantity}
+                  </TableCell>
                 <TableCell className={styles.tableCell + " text-center"}>
                   {product.quality}
                 </TableCell>

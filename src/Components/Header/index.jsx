@@ -57,8 +57,8 @@ function Header() {
             <Link to="/" className="navbar-brand">
               <img src={require("../../assets/images/logo.png")} alt="Logo Image" className="logo"
                 style={{
-                  width: "250px",
-                  height: "35px",
+                  width: "100px",
+                  height: "100px",
                   borderRadius: "none",
                   marginRight: "100px",
                   marginLeft: "10px",
