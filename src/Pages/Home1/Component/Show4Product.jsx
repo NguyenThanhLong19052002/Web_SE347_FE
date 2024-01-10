@@ -44,8 +44,8 @@ const Show4Product = ({ products }) => {
           <ArrowForwardIcon className="icon-arrow-next" fontSize="small" />
         </a>
         <p className="product-name">{product.name}</p>
-        <p className="product-price">{`${product.price}đ`}</p>
-        <p className="product-quantity-sold">{`đã bán ${product.quantity_sold}`}</p>
+        <p className="product-price">{product.price.toLocaleString('vi', { style: 'currency', currency: 'VND' })}</p>
+        <p className="product-quantity-sold">{`${product.quantity_sold} đã bán`}</p>
       </div>
     ));
   };

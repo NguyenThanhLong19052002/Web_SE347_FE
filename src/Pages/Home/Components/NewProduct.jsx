@@ -1,9 +1,9 @@
-import React from "react";
-import { Container, Row, Col, Card } from "react-bootstrap";
-import { Link, useNavigate } from "react-router-dom";
+import React from 'react';
+import { Container, Row, Col, Card } from 'react-bootstrap';
+import { Link, useNavigate } from 'react-router-dom';
 
-import { useState, useEffect } from "react";
-import ReactPaginate from "react-paginate";
+import { useState, useEffect } from 'react';
+import ReactPaginate from 'react-paginate';
 function NewProductHomepage({ products }) {
   const visiblePro = products;
   const navigate = useNavigate();
@@ -22,28 +22,25 @@ function NewProductHomepage({ products }) {
               {/* <Link to={`/productsdetail/${product._id}`}> */}
               <Card
                 style={{
-                  background: "#f7f7f7",
-                  marginBottom: "30px",
-                  cursor: "pointer",
-                  height: "90%"
+                  background: '#f7f7f7',
+                  marginBottom: '30px',
+                  cursor: 'pointer',
+                  height: '90%',
                 }}
+                className="product-item"
                 onClick={() => handleProductClick(product._id)}
               >
-                <Card.Body style={{ textAlign: "center", display: "flex", flexDirection: "column"  }}>
-                  <Card.Img src={product.image} style={{height: "80%"}}></Card.Img>
-                  <Card.Title style={{ fontWeight: "500", fontSize:"0.9rem", marginTop: 10 }}>
-                    {product.name}
-                  </Card.Title>
-                  <Card.Text style={{ color: "#e7b475", fontWeight: "500", fontSize: "0.9rem", marginTop: "auto" }}>
-                    {product.price} đ
-                  </Card.Text>
+                <Card.Body style={{ textAlign: 'center', display: 'flex', flexDirection: 'column' }}>
+                  <Card.Img className="product-image" src={product.image} style={{ height: '80%' }}></Card.Img>
+                  <Card.Title style={{ fontWeight: '500', fontSize: '0.9rem', marginTop: 10 }}>{product.name}</Card.Title>
+                  <Card.Text style={{ color: '#e7b475', fontWeight: '500', fontSize: '0.9rem', marginTop: 'auto' }}>{product.price} đ</Card.Text>
                   <Card.Text
                     style={{
-                      color: "black",
-                      fontWeight: "350",
-                      float: "right",
-                      textAlign: "end",
-                      fontSize: "0.8rem"
+                      color: 'black',
+                      fontWeight: '350',
+                      float: 'right',
+                      textAlign: 'end',
+                      fontSize: '0.8rem',
                     }}
                   >
                     {product.quantity_sold} đã bán

@@ -1,7 +1,7 @@
-import React, { useState } from "react";
-import { Container, Row, Col, Card, Button } from "react-bootstrap";
-import { Link, useNavigate } from "react-router-dom";
-
+import React, { useState } from 'react';
+import { Container, Row, Col, Card, Button } from 'react-bootstrap';
+import { Link, useNavigate } from 'react-router-dom';
+import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 function ProductList({ products }) {
   //click để hiện nhiều sản phẩm hơn.
   const [showMore, setShowMore] = useState(false);
@@ -26,50 +26,49 @@ function ProductList({ products }) {
               {/* <Link to={`/productsdetail/${product._id}`}> */}
               <Card
                 style={{
-                  background: "#f7f7f7",
-                  marginBottom: "30px",
-                  cursor: "pointer",
-                  height: "90%",
+                  background: '#f7f7f7',
+                  marginBottom: '30px',
+                  cursor: 'pointer',
+                  height: '90%',
                 }}
+                className="product-item"
                 onClick={() => handleProductClick(product._id)}
               >
                 <Card.Body
                   style={{
-                    textAlign: "center",
-                    display: "flex",
-                    flexDirection: "column",
+                    textAlign: 'center',
+                    display: 'flex',
+                    flexDirection: 'column',
                   }}
                 >
-                  <Card.Img
-                    src={product.image}
-                    style={{ height: "80%" }}
-                  ></Card.Img>
-
+                  <Card.Img src={product.image} style={{ height: '80%' }} className="product-image"></Card.Img>
+                  <a onClick={() => handleProductClick(product._id)} className="detail-button">
+                    Chi tiết
+                    <ArrowForwardIcon className="icon-arrow-next" fontSize="small" />
+                  </a>
                   <Card.Title
                     style={{
-                      fontSize: "18px",
+                      fontSize: '20px',
                       marginTop: 10,
-                      fontWeight: "300",
+                      fontWeight: '400',
                     }}
                   >
                     {product.name}
                   </Card.Title>
                   <Card.Text
                     style={{
-                      color: "#8c69f5",
-                      fontWeight: "300",
-                      fontSize: "18px",
-                      marginTop: "auto",
+                      color: '#e7b475',
+                      fontWeight: '500',
+                      fontSize: '18px',
+                      marginTop: 'auto',
                     }}
                   >
-                    {product.price.toLocaleString("vi", {
-                      style: "currency",
-                      currency: "VND",
+                    {product.price.toLocaleString('vi', {
+                      style: 'currency',
+                      currency: 'VND',
                     })}
                   </Card.Text>
-                  <Card.Text style={{ textAlign: "end", fontSize: "0.8rem" }}>
-                    {product.quantity_sold} đã bán
-                  </Card.Text>
+                  <Card.Text style={{ textAlign: 'end', fontSize: '0.8rem' }}>{product.quantity_sold} đã bán</Card.Text>
                 </Card.Body>
               </Card>
               {/* </Link> */}
@@ -81,7 +80,7 @@ function ProductList({ products }) {
             {/* Nhấn nút xem thêm sẽ hiện thêm các sản phẩm */}
             {products.length > 3 && (
               <Button variant="secondary" onClick={toggleShowMore}>
-                {showMore ? "Ẩn bớt" : "xem thêm"}
+                {showMore ? 'Ẩn bớt' : 'xem thêm'}
               </Button>
             )}
           </Col>
