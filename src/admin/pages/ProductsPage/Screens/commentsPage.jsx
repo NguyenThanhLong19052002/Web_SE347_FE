@@ -18,9 +18,9 @@ import toast, { Toaster } from "react-hot-toast";
 import SearchIcon from "@mui/icons-material/Search";
 import Form from "react-bootstrap/Form";
 
-function ProductsPage() {
+function CommentsPageAdmin() {
   //Hiển thị dữ liệu các sản phẩm:
-  const [products, setProducts] = useState([]);
+  const [comments, setComments] = useState([]);
 
   const [userQuery, setUserQuery] = useState("");
 
@@ -29,19 +29,20 @@ function ProductsPage() {
   };
 
   useEffect(() => {
-    if(userQuery === ""){
-      loadProducts();
-    }
-    else{
-      searchProduct()
-    }
-  }, [userQuery]);
+    // if(userQuery === ""){
+    //   loadProducts();
+    // }
+    // else{
+    //   searchProduct()
+    // }
+    loadProducts();
+  }, []);
 
   const loadProducts = async () => {
     axios
-      .get("https://dialuxury.onrender.com/product")
+      .get("http://localhost:3001/danhgia")
       .then((response) => {
-        setProducts(response.data);
+        setComments(response.data);
       })
       .catch((error) => {
         console.log(error);
@@ -82,37 +83,37 @@ function ProductsPage() {
   const deleteProduct = (id) => {
     toast.loading("Deleting...");
     axios
-      .delete(`https://dialuxury.onrender.com/product/${id}`)
+      .delete(`http://localhost:3001/danhgia/${id}`)
       .then((response) => {
         toast.dismiss();
-        toast.success(<b>Xóa sản phẩm thành công</b>);
+        toast.success(<b>Xóa bình luận thành công</b>);
         //Load lại các sản phẩm:
         loadProducts();
-        console.log("Sản phẩm đã được xóa thành công");
+        console.log("Bình luận đã được xóa thành công");
       })
       .catch((error) => {
         toast.dismiss();
-        toast.error(<b>Xóa sản phẩm thất bại</b>);
+        toast.error(<b>Xóa bình luận thất bại</b>);
         // Xử lý lỗi từ API
-        console.error("Lỗi khi xóa sản phẩm:", error);
+        console.error("Lỗi khi xóa bình luận:", error);
       });
   };
 
-  const searchProduct = () =>{
-    axios
-      .get(`https://dialuxury.onrender.com/product/search?query=${userQuery}`)
-      .then((response) => {
-        console.log(
-          `https://dialuxury.onrender.com/product/search?query=${userQuery}`
-        );
-        setProducts(response.data);
+//   const searchProduct = () => {
+//     axios
+//       .get(`https://dialuxury.onrender.com/product/search?query=${userQuery}`)
+//       .then((response) => {
+//         console.log(
+//           `https://dialuxury.onrender.com/product/search?query=${userQuery}`
+//         );
+//         // setProducts(response.data);
 
-        console.log(response.data);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-  }
+//         console.log(response.data);
+//       })
+//       .catch((error) => {
+//         console.log(error);
+//       });
+//   };
 
   return (
     <Container fluid>
@@ -127,11 +128,12 @@ function ProductsPage() {
           marginTop: "20px",
         }}
       >
-        <Form className={"d-flex text-center"}>
+        {/* <Form className={"d-flex text-center"}>
           <Form.Control
             type="search"
-            placeholder="Tìm kiếm sản phẩm..."y
-            className={'me-2 ' + styles.formcontrol}
+            placeholder="Tìm kiếm sản phẩm..."
+            y
+            className={"me-2 " + styles.formcontrol}
             aria-label="Search"
             value={userQuery}
             onChange={handleChangeUserQuery}
@@ -147,14 +149,15 @@ function ProductsPage() {
           >
             <SearchIcon />
           </Button>
-        </Form>
-        <Link to="/admin/productsPage/add">
+        </Form> */}
+        {/* <Link to="/admin/productsPage/add">
           {" "}
           <Button variant="primary">Thêm mới</Button>{" "}
-        </Link>
+        </Link> */}
+        <b style={{ fontSize: "24px", color: "rgb(97, 97, 97)" }}>Danh sách bình luận</b>
       </div>
 
-      <div className={"border-l-3 py-4"}>
+      <div className={"border-l-3 py-3"}>
         <TableContainer component={Paper} className={styles.table}>
           <Table sx={{ minWidth: 1200 }} aria-label="simple table">
             <TableHead>
@@ -175,19 +178,19 @@ function ProductsPage() {
                   className={styles.tableCell + " text-center"}
                   style={{ fontSize: "16px", fontWeight: "500" }}
                 >
-                  Tên Sản phẩm
+                  Tên người dùng
                 </TableCell>
                 <TableCell
                   className={styles.tableCell + " text-center"}
                   style={{ fontSize: "16px", fontWeight: "500" }}
                 >
-                  Ảnh sản phẩm
+                  Bình luận
                 </TableCell>
                 <TableCell
                   className={styles.tableCell + " text-center"}
                   style={{ fontSize: "16px", fontWeight: "500" }}
                 >
-                  Loại sản phẩm
+                  Số sao đánh giá
                 </TableCell>
                 {/* <TableCell
                   className={styles.tableCell + " text-center"}
@@ -195,18 +198,18 @@ function ProductsPage() {
                 >
                   Số lượng
                 </TableCell> */}
-                <TableCell
+                {/* <TableCell
                   className={styles.tableCell + " text-center"}
                   style={{ fontSize: "16px", fontWeight: "500" }}
                 >
-                  Đơn vị tính
+                  Số sao
                 </TableCell>
                 <TableCell
                   className={styles.tableCell + " text-center"}
                   style={{ fontSize: "16px", fontWeight: "500" }}
                 >
-                  Giá
-                </TableCell>
+                  Tên người dùng
+                </TableCell> */}
                 <TableCell
                   className={styles.tableCell + " text-center"}
                   style={{ fontSize: "16px", fontWeight: "500" }}
@@ -216,35 +219,35 @@ function ProductsPage() {
               </TableRow>
             </TableHead>
             <TableBody>
-              {products.map((product, index) => {
+              {comments.map((comment, index) => {
                 return (
-                  <TableRow key={product._id}>
+                  <TableRow key={comment._id}>
                     <TableCell
                       className={styles.tableCell + " text-center"}
-                      onClick={() => {
-                        navigate(`/admin/productsPage/${product._id}`);
-                      }}
+                      //   onClick={() => {
+                      //     navigate(`/admin/productsPage/${product._id}`);
+                      //   }}
                     >
                       {index + 1}
                     </TableCell>
 
                     <TableCell
                       className={styles.tableCell + " text-center"}
-                      onClick={() => {
-                        navigate(`/admin/productsPage/${product._id}`);
-                      }}
+                      //   onClick={() => {
+                      //     navigate(`/admin/productsPage/${product._id}`);
+                      //   }}
                     >
-                      {product.productid}
+                      {comment.productid}
                     </TableCell>
                     <TableCell
                       className={styles.tableCell + " text-center"}
-                      onClick={() => {
-                        navigate(`/admin/productsPage/${product._id}`);
-                      }}
+                      //   onClick={() => {
+                      //     navigate(`/admin/productsPage/${product._id}`);
+                      //   }}
                     >
-                      {product.name}
+                      {comment.name}
                     </TableCell>
-                    <TableCell
+                    {/* <TableCell
                       className={styles.tableCell + " text-center"}
                       onClick={() => {
                         navigate(`/admin/productsPage/${product._id}`);
@@ -255,14 +258,14 @@ function ProductsPage() {
                         roundedCircle="true"
                         style={{ width: "50px", height: "50px" }}
                       ></Image>
-                    </TableCell>
+                    </TableCell> */}
                     <TableCell
                       className={styles.tableCell + " text-center"}
-                      onClick={() => {
-                        navigate(`/admin/productsPage/${product._id}`);
-                      }}
+                      //   onClick={() => {
+                      //     navigate(`/admin/productsPage/${product._id}`);
+                      //   }}
                     >
-                      {product.category}
+                      {comment.content}
                     </TableCell>
                     {/* <TableCell
                       className={styles.tableCell + " text-center"}
@@ -275,24 +278,24 @@ function ProductsPage() {
 
                     <TableCell
                       className={styles.tableCell + " text-center"}
-                      onClick={() => {
-                        navigate(`/admin/productsPage/${product._id}`);
-                      }}
+                      //   onClick={() => {
+                      //     navigate(`/admin/productsPage/${product._id}`);
+                      //   }}
                     >
-                      {product.dvt}
+                      {comment.rating}
                     </TableCell>
-                    <TableCell
+                    {/* <TableCell
                       className={styles.tableCell + " text-center"}
                       onClick={() => {
                         navigate(`/admin/productsPage/${product._id}`);
                       }}
                     >
                       {product.price} đ
-                    </TableCell>
+                    </TableCell> */}
 
                     <TableCell className={styles.tableCell + " text-center"}>
-                      <div className="d-flex">
-                        <Button
+                      <div className="align-items-center">
+                        {/* <Button
                           variant="warning"
                           className="me-1"
                           onClick={() => {
@@ -303,10 +306,10 @@ function ProductsPage() {
                           }}
                         >
                           Sửa
-                        </Button>{" "}
+                        </Button>{" "} */}
                         <Button
                           variant="danger"
-                          onClick={() => deleteProduct(product._id)}
+                          onClick={() => deleteProduct(comment._id)}
                         >
                           Xóa
                         </Button>{" "}
@@ -323,4 +326,4 @@ function ProductsPage() {
   );
 }
 
-export default ProductsPage;
+export default CommentsPageAdmin;

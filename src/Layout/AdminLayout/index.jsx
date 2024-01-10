@@ -40,7 +40,7 @@ function AdminLayout({ children }) {
           </div>
         </Col>
         <Col sm={10}>
-        {children}
+          {children}
         </Col>
         
       </Row>

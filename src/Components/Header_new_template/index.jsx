@@ -265,10 +265,21 @@ function NewHeader() {
                 >
                   BLOG
                 </Link>
+                <Link
+                  to="/"
+                  className={styles.items + " nav-link"}
+                  style={{
+                    fontSize: "1.3rem",
+                    fontWeight: "600",
+                    color: "#231f20",
+                  }}
+                >
+                  COMBO
+                </Link>
               </Nav>
             </Col>
             <Col xs={12} md={12} lg={3}>
-              <Form className={"d-flex text-center" + styles.form}>
+              <Form className={"d-flex text-center" + styles.formcontrol}>
                 <Form.Control
                   type="search"
                   placeholder="Tìm kiếm sản phẩm"
@@ -282,7 +293,7 @@ function NewHeader() {
 
                 <Button
                   variant="danger"
-                  className={styles.button}
+                  // className={styles.button}
                   onClick={() => {
                     navigate(`/search?query=${userQuery}`);
                   }}
