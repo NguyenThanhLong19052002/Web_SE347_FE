@@ -55,7 +55,7 @@ function AdminSidebar() {
             </Link>
           </li>
           <li>
-            <Link to="/admin/commentsPage" style={{ textDecoration: 'none' }}>
+            <Link to="/admin/commentsManagementPage" style={{ textDecoration: 'none' }}>
                 <CommentIcon className={styles.icon} />
                 <span>Quản lý bình luận</span>
             </Link>
