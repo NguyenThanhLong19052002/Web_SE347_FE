@@ -18,34 +18,30 @@ import toast, { Toaster } from "react-hot-toast";
 import SearchIcon from "@mui/icons-material/Search";
 import Form from "react-bootstrap/Form";
 
-function CommentsPageAdmin() {
+function CommentsManagementPageAdmin() {
   //Hiển thị dữ liệu các sản phẩm:
-  const [comments, setComments] = useState([]);
+  const [products, setProducts] = useState([]);
 
   const [userQuery, setUserQuery] = useState("");
-
-  const { id } = useParams(); //lấy id từ url
 
   const handleChangeUserQuery = (e) => {
     setUserQuery(e.target.value);
   };
 
   useEffect(() => {
-    // if(userQuery === ""){
-    //   loadProducts();
-    // }
-    // else{
-    //   searchProduct()
-    // }
-    loadProducts();
-  }, []);
+    if(userQuery === ""){
+      loadProducts();
+    }
+    else{
+      searchProduct()
+    }
+  }, [userQuery]);
 
   const loadProducts = async () => {
     axios
-      .get(`http://localhost:3001/danhgia/${id}`)
+      .get("https://dialuxury.onrender.com/product")
       .then((response) => {
-        console.log(response.data);
-        setComments(response.data.listDanhGia);
+        setProducts(response.data);
       })
       .catch((error) => {
         console.log(error);
@@ -86,37 +82,37 @@ function CommentsPageAdmin() {
   const deleteProduct = (id) => {
     toast.loading("Deleting...");
     axios
-      .delete(`http://localhost:3001/danhgia/${id}`)
+      .delete(`https://dialuxury.onrender.com/product/${id}`)
       .then((response) => {
         toast.dismiss();
-        toast.success(<b>Xóa bình luận thành công</b>);
+        toast.success(<b>Xóa sản phẩm thành công</b>);
         //Load lại các sản phẩm:
         loadProducts();
-        console.log("Bình luận đã được xóa thành công");
+        console.log("Sản phẩm đã được xóa thành công");
       })
       .catch((error) => {
         toast.dismiss();
-        toast.error(<b>Xóa bình luận thất bại</b>);
+        toast.error(<b>Xóa sản phẩm thất bại</b>);
         // Xử lý lỗi từ API
-        console.error("Lỗi khi xóa bình luận:", error);
+        console.error("Lỗi khi xóa sản phẩm:", error);
       });
   };
 
-//   const searchProduct = () => {
-//     axios
-//       .get(`https://dialuxury.onrender.com/product/search?query=${userQuery}`)
-//       .then((response) => {
-//         console.log(
-//           `https://dialuxury.onrender.com/product/search?query=${userQuery}`
-//         );
-//         // setProducts(response.data);
+  const searchProduct = () =>{
+    axios
+      .get(`https://dialuxury.onrender.com/product/search?query=${userQuery}`)
+      .then((response) => {
+        console.log(
+          `https://dialuxury.onrender.com/product/search?query=${userQuery}`
+        );
+        setProducts(response.data);
 
-//         console.log(response.data);
-//       })
-//       .catch((error) => {
-//         console.log(error);
-//       });
-//   };
+        console.log(response.data);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }
 
   return (
     <Container fluid>
@@ -131,12 +127,11 @@ function CommentsPageAdmin() {
           marginTop: "20px",
         }}
       >
-        {/* <Form className={"d-flex text-center"}>
+        <Form className={"d-flex text-center"}>
           <Form.Control
             type="search"
-            placeholder="Tìm kiếm sản phẩm..."
-            y
-            className={"me-2 " + styles.formcontrol}
+            placeholder="Tìm kiếm sản phẩm..."y
+            className={'me-2 ' + styles.formcontrol}
             aria-label="Search"
             value={userQuery}
             onChange={handleChangeUserQuery}
@@ -152,15 +147,10 @@ function CommentsPageAdmin() {
           >
             <SearchIcon />
           </Button>
-        </Form> */}
-        {/* <Link to="/admin/productsPage/add">
-          {" "}
-          <Button variant="primary">Thêm mới</Button>{" "}
-        </Link> */}
-        <b style={{ fontSize: "24px", color: "rgb(97, 97, 97)" }}>Danh sách bình luận</b>
+        </Form>
       </div>
 
-      <div className={"border-l-3 py-3"}>
+      <div className={"border-l-3 py-4"}>
         <TableContainer component={Paper} className={styles.table}>
           <Table sx={{ minWidth: 1200 }} aria-label="simple table">
             <TableHead>
@@ -175,19 +165,25 @@ function CommentsPageAdmin() {
                   className={styles.tableCell + " text-center"}
                   style={{ fontSize: "16px", fontWeight: "500" }}
                 >
-                  Tên người dùng
+                  Mã sản phẩm
                 </TableCell>
                 <TableCell
                   className={styles.tableCell + " text-center"}
                   style={{ fontSize: "16px", fontWeight: "500" }}
                 >
-                  Bình luận
+                  Tên Sản phẩm
                 </TableCell>
                 <TableCell
                   className={styles.tableCell + " text-center"}
                   style={{ fontSize: "16px", fontWeight: "500" }}
                 >
-                  Số sao đánh giá
+                  Ảnh sản phẩm
+                </TableCell>
+                <TableCell
+                  className={styles.tableCell + " text-center"}
+                  style={{ fontSize: "16px", fontWeight: "500" }}
+                >
+                  Loại sản phẩm
                 </TableCell>
                 {/* <TableCell
                   className={styles.tableCell + " text-center"}
@@ -195,18 +191,18 @@ function CommentsPageAdmin() {
                 >
                   Số lượng
                 </TableCell> */}
-                {/* <TableCell
+                <TableCell
                   className={styles.tableCell + " text-center"}
                   style={{ fontSize: "16px", fontWeight: "500" }}
                 >
-                  Số sao
+                  Đơn vị tính
                 </TableCell>
                 <TableCell
                   className={styles.tableCell + " text-center"}
                   style={{ fontSize: "16px", fontWeight: "500" }}
                 >
-                  Tên người dùng
-                </TableCell> */}
+                  Giá
+                </TableCell>
                 <TableCell
                   className={styles.tableCell + " text-center"}
                   style={{ fontSize: "16px", fontWeight: "500" }}
@@ -216,44 +212,38 @@ function CommentsPageAdmin() {
               </TableRow>
             </TableHead>
             <TableBody>
-              {comments.map((comment, index) => {
+              {products.map((product, index) => {
                 return (
-                  <TableRow key={comment._id}>
+                  <TableRow key={product._id}>
                     <TableCell
                       className={styles.tableCell + " text-center"}
-                      //   onClick={() => {
-                      //     navigate(`/admin/productsPage/${product._id}`);
-                      //   }}
                     >
                       {index + 1}
                     </TableCell>
+
                     <TableCell
                       className={styles.tableCell + " text-center"}
-                      //   onClick={() => {
-                      //     navigate(`/admin/productsPage/${product._id}`);
-                      //   }}
                     >
-                      {comment.name}
+                      {product.productid}
                     </TableCell>
-                    {/* <TableCell
+                    <TableCell
                       className={styles.tableCell + " text-center"}
-                      onClick={() => {
-                        navigate(`/admin/productsPage/${product._id}`);
-                      }}
+                    >
+                      {product.name}
+                    </TableCell>
+                    <TableCell
+                      className={styles.tableCell + " text-center"}
                     >
                       <Image
                         src={product.image}
                         roundedCircle="true"
                         style={{ width: "50px", height: "50px" }}
                       ></Image>
-                    </TableCell> */}
+                    </TableCell>
                     <TableCell
                       className={styles.tableCell + " text-center"}
-                      //   onClick={() => {
-                      //     navigate(`/admin/productsPage/${product._id}`);
-                      //   }}
                     >
-                      {comment.content}
+                      {product.category}
                     </TableCell>
                     {/* <TableCell
                       className={styles.tableCell + " text-center"}
@@ -266,42 +256,28 @@ function CommentsPageAdmin() {
 
                     <TableCell
                       className={styles.tableCell + " text-center"}
-                      //   onClick={() => {
-                      //     navigate(`/admin/productsPage/${product._id}`);
-                      //   }}
                     >
-                      {comment.rating}
+                      {product.dvt}
                     </TableCell>
-                    {/* <TableCell
+                    <TableCell
                       className={styles.tableCell + " text-center"}
-                      onClick={() => {
-                        navigate(`/admin/productsPage/${product._id}`);
-                      }}
                     >
                       {product.price} đ
-                    </TableCell> */}
+                    </TableCell>
 
                     <TableCell className={styles.tableCell + " text-center"}>
-                      <div className="align-items-center">
-                        {/* <Button
-                          variant="warning"
+                        <Button
+                          variant="primary"
                           className="me-1"
                           onClick={() => {
                             return navigate(
-                              `/admin/productsPage/edit/${product._id}`
+                              `/admin/commentsPage/${product.productid}`
                             );
                             // { handleEditClick }
                           }}
                         >
-                          Sửa
-                        </Button>{" "} */}
-                        <Button
-                          variant="danger"
-                          onClick={() => deleteProduct(comment._id)}
-                        >
-                          Xóa
-                        </Button>{" "}
-                      </div>
+                          Xem bình luận
+                        </Button>
                     </TableCell>
                   </TableRow>
                 );
@@ -314,4 +290,4 @@ function CommentsPageAdmin() {
   );
 }
 
-export default CommentsPageAdmin;
+export default CommentsManagementPageAdmin;
