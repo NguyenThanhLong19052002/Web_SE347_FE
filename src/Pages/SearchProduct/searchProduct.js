@@ -48,6 +48,7 @@ function ProductsPage() {
             ))}
           </Carousel>
         </Row>
+
         <Row>
           <ProductList products={products} />;
         </Row>

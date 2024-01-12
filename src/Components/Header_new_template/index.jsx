@@ -266,7 +266,7 @@ function NewHeader() {
                   BLOG
                 </Link>
                 <Link
-                  to="/"
+                  to="/products/bo-trang-suc-1"
                   className={styles.items + " nav-link"}
                   style={{
                     fontSize: "1.3rem",
@@ -274,7 +274,7 @@ function NewHeader() {
                     color: "#231f20",
                   }}
                 >
-                  COMBO
+                  BỘ TRANG SỨC
                 </Link>
               </Nav>
             </Col>

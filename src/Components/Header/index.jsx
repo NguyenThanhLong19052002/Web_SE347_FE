@@ -52,55 +52,80 @@ function Header() {
   return (
     <>
       {/* nav 1 */}
-      <Navbar collapseOnSelect expand="xl" bg="light" variant="light" className={styles.firstNav}>
+      <Navbar
+        collapseOnSelect
+        expand="xl"
+        bg="light"
+        variant="light"
+        className={styles.firstNav}
+      >
         <Container className={styles.myContainer}>
-            <Link to="/" className="navbar-brand">
-              <img src={require("../../assets/images/logo.png")} alt="Logo Image" className="logo"
-                style={{
-                  width: "100px",
-                  height: "100px",
-                  borderRadius: "none",
-                  marginRight: "100px",
-                  marginLeft: "10px",
-                }}
-              />
-            </Link>
+          <Link to="/" className="navbar-brand">
+            <img
+              src={require("../../assets/images/logo.png")}
+              alt="Logo Image"
+              className="logo"
+              style={{
+                width: "100px",
+                height: "100px",
+                borderRadius: "none",
+                marginRight: "100px",
+                marginLeft: "10px",
+              }}
+            />
+          </Link>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="me-auto"></Nav>
             <Nav className={styles.navTop}>
-              <Link to="/" className={styles.items +" nav-link text-center"}>
+              <Link to="/" className={styles.items + " nav-link text-center"}>
                 <div className={styles.item}>
                   <PhoneIcon className={styles.icon} />
                   1800 54 54 57
                 </div>
               </Link>
-              <Link to={`/book/${_id}`} className={styles.items + " nav-link text-center"}>
+              <Link
+                to={`/book/${_id}`}
+                className={styles.items + " nav-link text-center"}
+              >
                 <div className={styles.item}>
                   <CalendarTodayIcon className={styles.icon} />
                   Đặt lịch hẹn
                 </div>
               </Link>
-              <Link to={`/orders/${_id}`} className={styles.items + " nav-link text-center"}>
+              <Link
+                to={`/orders/${_id}`}
+                className={styles.items + " nav-link text-center"}
+              >
                 <div className={styles.item}>
                   <HistoryIcon className={styles.icon} />
                   Lịch sử đơn hàng
                 </div>
               </Link>
-              <Link to="/cart" className={styles.items + " nav-link text-center"}>
-                  <div className={styles.item}>
-                    <div className="position-relative">
-                      <ShoppingCartIcon className={styles.icon + "mr-0"} />
-                      <span className="position-absolute top-0 start-60 translate-middle badge rounded-pill bg-danger m-0" style={{ fontSize: 10 }}>
-                        {productAmount}
-                      </span>
-                    </div>
-                      Giỏ hàng
+              <Link
+                to="/cart"
+                className={styles.items + " nav-link text-center"}
+              >
+                <div className={styles.item}>
+                  <div className="position-relative">
+                    <ShoppingCartIcon className={styles.icon + "mr-0"} />
+                    <span
+                      className="position-absolute top-0 start-60 translate-middle badge rounded-pill bg-danger m-0"
+                      style={{ fontSize: 10 }}
+                    >
+                      {productAmount}
+                    </span>
                   </div>
+                  Giỏ hàng
+                </div>
               </Link>
               {token && role === "user" ? (
                 <>
-                  <Link to="#" className={styles.items + " nav-link"} onClick={handleLogout}>
+                  <Link
+                    to="#"
+                    className={styles.items + " nav-link"}
+                    onClick={handleLogout}
+                  >
                     <div className={styles.item}>
                       <PersonIcon className={styles.icon} />
                       Đăng xuất
@@ -124,49 +149,89 @@ function Header() {
       <Navbar bg="light" variant="light" className={styles.secondNav}>
         <div className={styles.myContainer + " container-fluid"}>
           <Row className="container-fluid justify-content-between ps-0">
-          <Col xs={12} md={12} lg={7} className="d-flex flex-wrap text-center ps-0 ms-3">
-            <Link to="/" className="navbar-brand" style={{paddingLeft: "0.5rem", fontWeight: 500}}>Trang chủ</Link>
-            <Nav className="me-auto d-flex flex-wrap justify-content-between">
-              <NavDropdown style={{ fontWeight: "500" }} title="Sản phẩm" className="text-center">
-                <Link to="/products/nhan" className={styles.singlePage + " dropdown-item"} style={{ fontSize: "1rem" }}>
-                  Nhẫn
+            <Col
+              xs={12}
+              md={12}
+              lg={7}
+              className="d-flex flex-wrap text-center ps-0 ms-3"
+            >
+              <Link
+                to="/"
+                className="navbar-brand"
+                style={{ paddingLeft: "0.5rem", fontWeight: 500 }}
+              >
+                Trang chủ
+              </Link>
+              <Nav className="me-auto d-flex flex-wrap justify-content-between">
+                <NavDropdown
+                  style={{ fontWeight: "500" }}
+                  title="Sản phẩm"
+                  className="text-center"
+                >
+                  <Link
+                    to="/products/nhan"
+                    className={styles.singlePage + " dropdown-item"}
+                    style={{ fontSize: "1rem" }}
+                  >
+                    Nhẫn
+                  </Link>
+                  <NavDropdown.Divider />
+                  <Link
+                    to="/products/bong-tai"
+                    className={styles.singlePage + " dropdown-item"}
+                    style={{ fontSize: "1rem" }}
+                  >
+                    Bông tai
+                  </Link>
+                  <NavDropdown.Divider />
+                  <Link
+                    to="/products/day-chuyen"
+                    className={styles.singlePage + " dropdown-item"}
+                    style={{ fontSize: "1rem" }}
+                  >
+                    Dây chuyền
+                  </Link>
+                  <Link
+                    to="/products/bo-trang-suc"
+                    className={styles.singlePage + " dropdown-item"}
+                    style={{ fontSize: "1rem" }}
+                  >
+                    Bộ Trang Sức
+                  </Link>
+                </NavDropdown>
+                <Link to="/blog" className="nav-link">
+                  Blog
                 </Link>
-                <NavDropdown.Divider />
-                <Link to="/products/bong-tai" className={styles.singlePage + " dropdown-item"} style={{ fontSize: "1rem" }}>
-                  Bông tai
+                <Link to="/aboutus" className="nav-link">
+                  Về chúng tôi
                 </Link>
-                <NavDropdown.Divider />
-                <Link to="/products/day-chuyen" className={styles.singlePage + " dropdown-item"} style={{ fontSize: "1rem" }}>
-                  Dây chuyền
+                <Link to={`/account/${_id}`} className="nav-link">
+                  Tài khoản
                 </Link>
-              </NavDropdown>
-                <Link to="/blog" className="nav-link">Blog</Link>
-                <Link to="/aboutus" className="nav-link">Về chúng tôi</Link>
-                <Link to={`/account/${_id}`} className="nav-link">Tài khoản</Link>
-            </Nav>
-          </Col>
-          <Col xs={12} md={12} lg={4}>
-            <Form className={"d-flex " + styles.form}>
-              <Form.Control
-                type="search"
-                placeholder="Tìm kiếm"
-                className={"me-2 " + styles.formcontrol}
-                aria-label="Search"
-                value={userQuery}
-                onChange={handleChangeUserQuery}
+              </Nav>
+            </Col>
+            <Col xs={12} md={12} lg={4}>
+              <Form className={"d-flex " + styles.form}>
+                <Form.Control
+                  type="search"
+                  placeholder="Tìm kiếm"
+                  className={"me-2 " + styles.formcontrol}
+                  aria-label="Search"
+                  value={userQuery}
+                  onChange={handleChangeUserQuery}
                 />
 
-              <Button
-                variant="secondary"
-                className={styles.button}
-                onClick={() => {
-                  navigate(`/search?query=${userQuery}`);
-                }}
+                <Button
+                  variant="secondary"
+                  className={styles.button}
+                  onClick={() => {
+                    navigate(`/search?query=${userQuery}`);
+                  }}
                 >
-                <SearchIcon />
-              </Button>
-            </Form>
-          </Col>
+                  <SearchIcon />
+                </Button>
+              </Form>
+            </Col>
           </Row>
         </div>
       </Navbar>

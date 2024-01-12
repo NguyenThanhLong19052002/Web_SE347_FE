@@ -14,7 +14,6 @@ import styles from "./warehouse.module.css";
 function WarehouseAdmin() {
   const [products, setProducts] = useState([]);
 
- 
   useEffect(() => {
     axios
       .get("https://dialuxury.onrender.com/product")
@@ -35,12 +34,12 @@ function WarehouseAdmin() {
           <Table sx={{ minWidth: 1200 }} aria-label="simple table">
             <TableHead>
               <TableRow>
-              <TableCell
-                    className={styles.tableCell + " text-center"}
-                    style={{ fontSize: "16px", fontWeight: "500" }}
-                  >
-                    STT
-                  </TableCell>
+                <TableCell
+                  className={styles.tableCell + " text-center"}
+                  style={{ fontSize: "16px", fontWeight: "500" }}
+                >
+                  STT
+                </TableCell>
                 <TableCell
                   className={styles.tableCell + " text-center"}
                   style={{ fontSize: "16px", fontWeight: "500" }}
@@ -100,12 +99,9 @@ function WarehouseAdmin() {
             <TableBody>
               {products.map((product, index) => (
                 <TableRow key={product.id}>
-                  
-                  <TableCell
-                  className={styles.tableCell + " text-center"}
-                >
-                  {index + 1}
-                </TableCell>
+                  <TableCell className={styles.tableCell + " text-center"}>
+                    {index + 1}
+                  </TableCell>
                   <TableCell className={styles.tableCell + " text-center"}>
                     {product.productid}
                   </TableCell>
@@ -118,9 +114,7 @@ function WarehouseAdmin() {
                   <TableCell className={styles.tableCell + " text-center"}>
                     {product.quantity_sold}
                   </TableCell>
-                  <TableCell
-                    className={styles.tableCell + " text-center"}
-                  >
+                  <TableCell className={styles.tableCell + " text-center"}>
                     {product.quantity}
                   </TableCell>
                   {/* <TableCell className={styles.tableCell + " text-center"}>
