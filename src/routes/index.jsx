@@ -10,6 +10,7 @@ import Blog from "../Pages/Blog/Blog";
 import ProductsPage from "../Pages/Products/Screens/ProductsPage";
 import ProductsPage1 from "../Pages/Products/Screens/ProductsPage1";
 import ProductsPage2 from "../Pages/Products/Screens/ProductsPage2";
+import ProductsPage3 from "../Pages/Products/Screens/ProductsPage3";
 import ProductsDetail from "../Pages/Products/Components/ProductDetail";
 import SearchProducts from "../Pages/SearchProduct/searchProduct";
 import AboutUs from "../Pages/AboutUs/AboutUs";
@@ -64,15 +65,18 @@ import ViewOrder from "../admin/pages/orderVerification/ViewOrder";
 import ConfirmationServiceNotification from "../admin/pages/service/viewService/verifiedService";
 import PaymentAdmin from "../admin/pages/Payment/Screens/paymentPage";
 import LoginAdmin from "../admin/loginAdmin/LoginAdmin";
+
 import CommentsPageAdmin from "../admin/pages/ProductsPage/Screens/commentsPage.jsx"
 import CommentsManagementPageAdmin from "../admin/pages/ProductsPage/Screens/commentsManagementPage.jsx"
 import DiscountCodePage from "../admin/pages/ProductsPage/Screens/discountCodePage.jsx"
 import AddDiscountCodeForm from "../admin/pages/ProductsPage/Screens/addDiscountCode.jsx"
 
+
 // Import Pages1: Giao diện mới
 import Products_Page from "../Pages/Products1/Screens/ProductsPage";
 import Products_Page1 from "../Pages/Products1/Screens/ProductsPage1";
 import Products_Page2 from "../Pages/Products1/Screens/ProductsPage2";
+import Products_Page3 from "../Pages/Products1/Screens/ProductsPage3";
 
 const publicRoutes = [
   { path: "/", component: <Home1 /> },
@@ -100,6 +104,10 @@ const publicRoutes = [
   {
     path: "/products/day-chuyen",
     component: <ProductsPage2 />,
+  },
+  {
+    path: "/products/bo-trang-suc",
+    component: <ProductsPage3 />,
   },
   {
     path: "/productsdetail/:id",
@@ -184,6 +192,10 @@ const publicRoutes = [
   {
     path: "/products/day-chuyen-1",
     component: <Products_Page2 />,
+  },
+  {
+    path: "/products/bo-trang-suc-1",
+    component: <Products_Page3 />,
   },
 ];
 export { publicRoutes };
