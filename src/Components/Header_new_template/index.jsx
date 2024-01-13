@@ -183,8 +183,8 @@ function NewHeader() {
               alt="Logo Image"
               className="logo"
               style={{
-                width: "300px",
-                height: "60px",
+                width: "200px",
+                height: "200px",
               }}
             />
           </Link>
