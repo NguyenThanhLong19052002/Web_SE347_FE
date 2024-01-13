@@ -65,8 +65,12 @@ import ViewOrder from "../admin/pages/orderVerification/ViewOrder";
 import ConfirmationServiceNotification from "../admin/pages/service/viewService/verifiedService";
 import PaymentAdmin from "../admin/pages/Payment/Screens/paymentPage";
 import LoginAdmin from "../admin/loginAdmin/LoginAdmin";
-import CommentsPageAdmin from "../admin/pages/ProductsPage/Screens/commentsPage.jsx";
-import CommentsManagementPageAdmin from "../admin/pages/ProductsPage/Screens/commentsManagementPage.jsx";
+
+import CommentsPageAdmin from "../admin/pages/ProductsPage/Screens/commentsPage.jsx"
+import CommentsManagementPageAdmin from "../admin/pages/ProductsPage/Screens/commentsManagementPage.jsx"
+import DiscountCodePage from "../admin/pages/ProductsPage/Screens/discountCodePage.jsx"
+import AddDiscountCodeForm from "../admin/pages/ProductsPage/Screens/addDiscountCode.jsx"
+
 
 // Import Pages1: Giao diện mới
 import Products_Page from "../Pages/Products1/Screens/ProductsPage";
@@ -412,6 +416,22 @@ const adminRoutes = [
     component: (
       <AuthorizedAdmin>
         <CommentsPageAdmin />
+      </AuthorizedAdmin>
+    ),
+  },
+  {
+    path: "/admin/discountCodePageAdmin",
+    component: (
+      <AuthorizedAdmin>
+        <DiscountCodePage />
+      </AuthorizedAdmin>
+    ),
+  },
+  {
+    path: "/admin/discountCodePageAdmin/add",
+    component: (
+      <AuthorizedAdmin>
+        <AddDiscountCodeForm />
       </AuthorizedAdmin>
     ),
   },
