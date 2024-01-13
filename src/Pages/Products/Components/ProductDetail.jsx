@@ -899,7 +899,7 @@ function Product() {
             </span>
           </p>
 
-          <h4 style={{ color: "#8c69f5" }}>
+          <h4 style={{ color: "rgb(236 213 9)" }}>
             {formatCurrency(product?.price || 1000000)}
           </h4>
           <Row>
