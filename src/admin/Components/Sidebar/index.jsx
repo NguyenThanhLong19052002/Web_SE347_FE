@@ -15,6 +15,7 @@ import AccountCircleOutlinedIcon from '@mui/icons-material/AccountCircleOutlined
 import LocalShippingIcon from '@mui/icons-material/LocalShipping';
 import NoteAltIcon from '@mui/icons-material/NoteAlt';
 import CommentIcon from '@mui/icons-material/Comment';
+import DiscountIcon from '@mui/icons-material/Discount';
 
 function AdminSidebar() {
   const navigate = useNavigate();
@@ -58,6 +59,12 @@ function AdminSidebar() {
             <Link to="/admin/commentsManagementPage" style={{ textDecoration: 'none' }}>
                 <CommentIcon className={styles.icon} />
                 <span>Quản lý bình luận</span>
+            </Link>
+          </li>
+          <li>
+            <Link to="/admin/discountCodePageAdmin" style={{ textDecoration: 'none' }}>
+                <DiscountIcon className={styles.icon} />
+                <span>Mã giảm giá</span>
             </Link>
           </li>
           <li>
